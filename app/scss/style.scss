@@ -1,0 +1,34 @@
+@import './reset';
+html{
+    scroll-behavior: smooth;
+}
+:root{
+    --white: #fff;
+    --green: #25d366;
+    --gradient: linear-gradient(0.3333333333333333turn,rgba(249,100,63,1) 16%,rgba(255,128,62,1) 100%);
+    --orange: #f9643f;
+    --black:#333333;
+    --main: #000;
+}
+body{
+    max-width: 1920px;
+    background: var(--grey);
+    margin: 0 auto;
+    font-family: "Manrope", sans-serif;
+}
+
+.container{
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.desk{
+    display: flex !important;
+}
+.mob{
+    display: none !important;
+}
+.hidden{
+    overflow: hidden;
+}
