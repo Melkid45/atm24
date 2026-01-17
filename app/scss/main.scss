@@ -1,55 +1,45 @@
-.main{
-    width: 100%;
-}
-
 .hero{
     width: 100%;
-    margin-top: 182px;
+    margin-top: 150px;
+    padding-bottom: 150px;
     &__body{
         position: relative;
         border-radius: 40px;
-        width: 100%;
         overflow: hidden;
-        &-img{
+        img{
             position: absolute;
+            width: 60%;
             right: 0;
             bottom: 0;
             height: 100%;
-            width: 60%;
-            object-fit: cover;
             z-index: -1;
+            object-fit: cover;
         }
         &-wrap{
-            padding: 64px 48px;
-            background: var(--gradient);
-            border-radius: 40px;
+            padding: 64px 32px 64px 48px;
+            background: var(--color-primary-linear);
             display: flex;
             flex-direction: column;
+            gap: 24px;
             max-width: max-content;
+            max-width: 50%;
             span{
                 display: flex;
                 align-items: center;
                 gap: 6px;
-                font-size: 18px;
-                color: var(--white);
-                line-height: 120%;
-                img{
-                    width: 18px;
-                    height: 18px;
+                color: var(--color-white);
+                white-space: nowrap;
+                svg{
+                    color: var(--color-white);
+                    width: 24px;
+                    height: 24px;
                 }
             }
             h1{
-                font-size: 55px;
-                color: var(--white);
-                line-height: 61px;
-                margin-top: 32px;
-                font-weight: 600;
+                color: var(--color-white);
             }
             p{
-                font-size: 19px;
-                color: var(--white);
-                line-height: 25px;
-                margin-top: 24px;
+                color: var(--color-white);   
             }
         }
     }

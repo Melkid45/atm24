@@ -1,0 +1,23 @@
+.base-text {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 100%;
+}
+
+.small-text {
+    font-size: 12px;
+    line-height: 120%;
+    color: var(--color-primary-textsub);
+    font-weight: 400;
+}
+.medium-text{
+    font-size: 18px;
+    line-height: 120%;
+    color: var(--color-primary-textnav);
+    font-weight: 600;
+}
+.title{
+    font-size: 55px;
+    line-height: 120%;
+    font-weight: 600;
+}
