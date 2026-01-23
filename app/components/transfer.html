@@ -1,0 +1,310 @@
+<section class="transfer">
+    <div class="container">
+        <div class="transfer__body">
+            <div class="transfer__body-breadcrumbs">
+                <a class="base-text" href="">Главная</a>
+                <p class="base-text">/</p>
+                <span class="base-text">Перевод денег из России в Таиланд</span>
+            </div>
+            <div class="transfer__body-frame">
+                <div class="frame-information">
+                    <h1 class="soft-title">
+                        Переводы <br> в
+                        <span>Таиланд</span>
+                    </h1>
+                    <p class="base-text">Международные переводы наличными или на банковский счет в <span
+                            class="change-country">Таиланд</span> для туризма и бизнеса</p>
+                    <div class="frame-information-attr">
+                        <div class="attr-item">
+                            <div class="icon">
+                                <i data-lucide="gauge"></i>
+                            </div>
+                            <p class="small-text">Перевод быстро и легко</p>
+                        </div>
+                        <div class="attr-item">
+                            <div class="icon">
+                                <i data-lucide="user-round"></i>
+                            </div>
+                            <p class="small-text">Более 100 переводов в день</p>
+                        </div>
+                        <div class="attr-item">
+                            <div class="icon">
+                                <i data-lucide="messages-square"></i>
+                            </div>
+                            <p class="small-text">Оперативная поддержка пользователей</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="frame-calculate">
+                    <h3 class="medium-text">Калькулятор обмена:</h3>
+                    <form action="" class="frame-calculate-form">
+                        <div class="calculate-item">
+                            <p class="base-text">Отдаете</p>
+                            <div class="calculate-item-wrap">
+                                <input class="base-text" type="number" placeholder="0.00" name="exchange-calculator">
+                                <div class="calculate-item-currency" x-data="{ open: false }"
+                                    @click.outside="open = false" @click.stop="open = !open">
+                                    <input type="hidden" name="exchange-currency" id="exchange-currency">
+                                    <div class="main-currency base-text">
+                                        <span class="fi fi-ru"></span>
+                                        <p>RUB СБП</p>
+                                    </div>
+                                    <i data-lucide="chevron-down" :class="{ 'opened': open }"></i>
+                                    <div class="default-modal base-text exchange-modal" x-show="open"
+                                        x-transition.duration.500ms>
+                                        <div class="currency-item" data-currency="RUB СБП">
+                                            <div class="fi fi-ru"></div>
+                                            <p>RUB СБП</p>
+                                        </div>
+                                        <div class="currency-item" data-currency="RUB Наличные РФ">
+                                            <div class="fi fi-ru"></div>
+                                            <p>RUB Наличные РФ</p>
+                                        </div>
+                                        <div class="currency-item" data-currency="USDT Tether">
+                                            <div class="fi fi-us"></div>
+                                            <p>USDT Tether</p>
+                                        </div>
+                                        <div class="currency-item" data-currency="THB Банковский перевод">
+                                            <div class="fi fi-th"></div>
+                                            <p>THB Банковский перевод</p>
+                                        </div>
+                                        <div class="currency-item" data-currency="THB Наличные">
+                                            <div class="fi fi-th"></div>
+                                            <p>THB Наличные</p>
+                                        </div>
+                                        <div class="currency-item" data-currency="CNY Alipay">
+                                            <div class="fi fi-cn"></div>
+                                            <p>CNY Alipay</p>
+                                        </div>
+                                        <div class="currency-item" data-currency="KZT Банковский перевод">
+                                            <div class="fi fi-kz"></div>
+                                            <p>KZT Банковский перевод</p>
+                                        </div>
+                                        <div class="currency-item" data-currency="USD Наличные">
+                                            <div class="fi fi-us"></div>
+                                            <p>USD Наличные</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calculate-item">
+                            <p class="base-text">Получаете</p>
+                            <div class="calculate-item-wrap">
+                                <input class="base-text" type="number" placeholder="0.00" name="choices-calculator">
+                                <div class="calculate-item-currency" x-data="{ open: false }"
+                                    @click.outside="open = false" @click.stop="open = !open">
+                                    <input type="hidden" name="choices-currency" id="choices-currency">
+                                    <div class="main-currency base-text">
+                                        <span class="fi fi-ru"></span>
+                                        <p>RUB СБП</p>
+                                    </div>
+                                    <i data-lucide="chevron-down" :class="{ 'opened': open }"></i>
+                                    <div class="default-modal base-text choices-modal" x-show="open"
+                                        x-transition.duration.500ms>
+                                        <div class="currency-item" data-currency="RUB СБП">
+                                            <div class="fi fi-ru"></div>
+                                            <p>RUB СБП</p>
+                                        </div>
+                                        <div class="currency-item" data-currency="RUB Наличные РФ">
+                                            <div class="fi fi-ru"></div>
+                                            <p>RUB Наличные РФ</p>
+                                        </div>
+                                        <div class="currency-item" data-currency="USDT Tether">
+                                            <div class="fi fi-us"></div>
+                                            <p>USDT Tether</p>
+                                        </div>
+                                        <div class="currency-item" data-currency="THB Банковский перевод">
+                                            <div class="fi fi-th"></div>
+                                            <p>THB Банковский перевод</p>
+                                        </div>
+                                        <div class="currency-item" data-currency="THB Наличные">
+                                            <div class="fi fi-th"></div>
+                                            <p>THB Наличные</p>
+                                        </div>
+                                        <div class="currency-item" data-currency="CNY Alipay">
+                                            <div class="fi fi-cn"></div>
+                                            <p>CNY Alipay</p>
+                                        </div>
+                                        <div class="currency-item" data-currency="KZT Банковский перевод">
+                                            <div class="fi fi-kz"></div>
+                                            <p>KZT Банковский перевод</p>
+                                        </div>
+                                        <div class="currency-item" data-currency="USD Наличные">
+                                            <div class="fi fi-us"></div>
+                                            <p>USD Наличные</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calculate-information">
+                            <p class="small-text">* При обмене сумм менее 50000.00 RUB применяется комиссия.</p>
+                            <div class="calculate-rate">
+                                <span class="base-text">Курс обмена:</span>
+                                <ul class="small-text">
+                                    <li>1 KZT = 0.1403 RUB</li>
+                                    <li>1 RUB = 7.1262 KZT</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="phone-wrap">
+                            <span class="medium-text">*WhatsApp или Telegram:</span>
+                            <div class="input-wrap">
+                                <input class="base-text" placeholder="Введите номер телефона" type="tel" id="phone">
+                            </div>
+                            <button class="button button-black">
+                                Отправить заявку
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="advantages">
+    <div class="container">
+        <div class="advantages__body">
+            <h2 class="soft-title">Почему стоит выбрать наш сервис</h2>
+            <div class="advantages__body-frame">
+                <div class="frame-item">
+                    <div class="icon">
+                        <i data-lucide="rotate-3d"></i>
+                    </div>
+                    <h3 class="medium-text">Мгновенная скорость переводов</h3>
+                    <p class="small-text">Мгновенные переводы в любую точку мира</p>
+                </div>
+                <div class="frame-item">
+                    <div class="icon">
+                        <i data-lucide="earth"></i>
+                    </div>
+                    <h3 class="medium-text">Наличие физических пунктов выдачи</h3>
+                    <p class="small-text">Мгновенные переводы в любую точку мира Большая сеть пунктов для получения
+                        наличных — более 500.000 офисов по всему миру.</p>
+                </div>
+
+                <div class="frame-item">
+                    <div class="icon">
+                        <i data-lucide="monitor-cloud"></i>
+                    </div>
+                    <h3 class="medium-text">Удобный онлайн-сервис</h3>
+                    <p class="small-text">Удобство и простота использования — всего несколько кликов, и ваши деньги
+                        отправлены в Тайланд.</p>
+                </div>
+                <div class="frame-item">
+                    <div class="icon">
+                        <i data-lucide="shield-check"></i>
+                    </div>
+                    <h3 class="medium-text">Безопасность и надежность</h3>
+                    <p class="small-text">Ваши переводы защищены законодательством и проверенными платежными системами,
+                        обеспечивая полную сохранность средств.</p>
+                </div>
+                <div class="frame-item">
+                    <div class="icon">
+                        <i data-lucide="diamond-percent"></i>
+                    </div>
+                    <h3 class="medium-text">Фиксированная комиссия</h3>
+                    <p class="small-text">Вы видите курс обмена валют, комиссию и сумму к зачислению получателю до
+                        отправки денег.</p>
+                </div>
+                <div class="frame-item">
+                    <div class="icon">
+                        <i data-lucide="banknote-arrow-up"></i>
+                    </div>
+                    <h3 class="medium-text">Разные способы переводов</h3>
+                    <p class="small-text">Переводите деньги как вам удобно — на банковские счета или карты, по номеру
+                        мобильного телефона или на электронные кошельки.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ways">
+    <div class="container">
+        <div class="ways__body">
+            <h2 class="soft-title">Способы перевода денег в <span class="change-country">Тайланд</span></h2>
+            <div class="ways__body-frame">
+                <div class="frame-item">
+                    <img src="../images/dist/way-left.webp" alt="">
+                    <h3 class="medium-text">На банковские счета</h3>
+                    <ul class="small-text">
+                        <li>
+                            <i data-lucide="circle-check"></i>
+                            Отправляем деньги в Таиланд на Visa, Mastercard и банковский счет THB
+                        </li>
+                        <li>
+                            <i data-lucide="circle-check"></i>
+                            Комиссия АTM24 составляет 2% без надбавок
+                        </li>
+                        <li>
+                            <i data-lucide="circle-check"></i>
+                            Зачисление в течении нескольких минут
+                        </li>
+                    </ul>
+                </div>
+                <div class="frame-item">
+                    <img src="../images/dist/way-right.webp" alt="">
+                    <h3 class="medium-text">Наличными</h3>
+                    <ul class="small-text">
+                        <li>
+                            <i data-lucide="circle-check"></i>
+                            Доставляем THB и USD в крупных городах Таиланда вам в руки
+                        </li>
+                        <li>
+                            <i data-lucide="circle-check"></i>
+                            Быстрая и доступная выдача наличных с АТМ без банковской карты
+                        </li>
+                        <li>
+                            <i data-lucide="circle-check"></i>
+                            Получение наличных в Тайланде за несколько минут
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="steps">
+    <div class="container">
+        <div class="steps__body">
+            <h2 class="soft-title">Как происходит перевод в <span class="change-country">Тайланд</span></h2>
+            <div class="steps__body-frame">
+                <div class="frame-item">
+                    <div class="number-circle soft-title">1</div>
+                    <h3 class="medium-text">Этап первый</h3>
+                    <p class="small-text">Заполните онлайн-форму <br> на сайте ATM24</p>
+                </div>
+                <div class="line"></div>
+                <div class="frame-item">
+                    <div class="number-circle soft-title">2</div>
+                    <h3 class="medium-text">Этап второй</h3>
+                    <p class="small-text">Предоставьте менеджеру данные для перевода денег</p>
+                </div>
+                <div class="line"></div>
+                <div class="frame-item">
+                    <div class="number-circle soft-title">3</div>
+                    <h3 class="medium-text">Этап третий</h3>
+                    <p class="small-text">Завершите транзакцию и ваш перевод будет отправлен</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="banner">
+    <div class="container">
+        <div class="banner__body">
+            <img class="banner-img" src="../images/dist/banner.webp" alt="">
+            <h2 class="soft-title">
+                Обменять валюту в <span class="change-country">Тайланде</span>
+            </h2>
+            <button class="button-black button">
+                Подробнее
+            </button>
+        </div>
+    </div>
+</section>
+<!--=include reviews.html -->
+<!--=include world.html -->
+<!--=include request.html -->
+<!--=include faq.html -->

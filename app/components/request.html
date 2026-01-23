@@ -1,0 +1,51 @@
+<section class="request">
+    <div class="container">
+        <div class="request__body">
+            <h2 class="soft-title">
+                С ATM24, переводы в <span class="change-country">Таиланде</span> становятся быстрыми, <br> удобными и
+                безопасными. Присоединяйтесь к нам <br> сегодня и убедитесь в этом сами!
+            </h2>
+            <div class="request__body-frame">
+                <div class="frame-inforamtion">
+                    <h3 class="soft-title">
+                        Оставьте заявку на обмен или перевод
+                    </h3>
+                    <p class="medium-text">
+                        Наш менеджер свяжется с Вами в течение 15 минут и проведет операцию
+                    </p>
+                </div>
+                <form action="" class="frame-form">
+                    <div class="input-wrap">
+                        <label for="">
+                            <i data-lucide="user-round"></i>
+                        </label>
+                        <input class="base-text" type="text" placeholder="Ваше имя">
+                    </div>
+                    <div class="input-wrap">
+                        <label for="">
+                            <i data-lucide="phone"></i>
+                        </label>
+                        <input class="base-text" placeholder="Введите номер телефона" type="tel" id="phone">
+                    </div>
+                    <div class="input-wrap" x-data="{ open: false }" @click.outside="open = false" @click.stop="open = !open">
+                        <label for="">
+                            <i data-lucide="banknote-arrow-up"></i>
+                        </label>
+                        <input readonly class="base-text" type="text" id="method" placeholder="Выберете способ">
+                        <div class="default-modal base-text choose-method" x-show="open" x-transition.duration.500ms>
+                            <span>Выдача через банкомат</span>
+                            <span>Курьерская доставка</span>
+                            <span>На счет в банке</span>
+                            <span>Выдача в офисе</span>
+                            <span>Перевести деньги через Western Union</span>
+                        </div>
+                    </div>
+                    <button class="button button-black">
+                        Отправить заявку
+                    </button>
+                </form>
+                <p class="small-text">*Отправляя эту заявку, вы соглашаетесь с нашей Политикой конфиденциальности.</p>
+            </div>
+        </div>
+    </div>
+</section>

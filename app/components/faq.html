@@ -1,0 +1,124 @@
+<section class="faq" x-data="{ activeId: null }">
+    <div class="container">
+        <div class="faq__body">
+            <h2 class="soft-title">
+                Часто задаваемые вопросы (FAQ)
+            </h2>
+            <div class="faq__body-frame">
+                <div class="faq-item" 
+                     :class="{ 'opened': activeId === 1 }" 
+                     @click="activeId = activeId === 1 ? null : 1">
+                    <div class="faq-item-title">
+                        <h3 class="medium-text">
+                            1. Какой способ перевода денег в Таиланд считается наилучшим?
+                        </h3>
+                        <button class="faq-item-button">
+                            <i data-lucide="plus" x-show="activeId !== 1"></i>
+                            <i data-lucide="minus" x-show="activeId === 1"></i>
+                        </button>
+                    </div>
+                    <div class="faq-content" x-show="activeId === 1" x-collapse>
+                        <p class="faq-item-text base-text">
+                            Наилучшие способы отправить деньги в Таиланд — международные SWIFT-переводы, внутренние
+                            банковские переводы, Western Union и MoneyGram. Внутренний банковский перевод удобен и является
+                            самым быстрым способом перевода, SWIFT-перевод подходит для отправки крупных сумм на банковский
+                            счет, а Western Union и MoneyGram позволяют отправлять деньги наличными или на счет с мгновенной
+                            обработкой. Выбор зависит от суммы, срочности и комиссии.Наш сервис поддерживает все способы
+                            перевода денег в Тайланд используя только легальные методы.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item" 
+                     :class="{ 'opened': activeId === 2 }" 
+                     @click="activeId = activeId === 2 ? null : 2">
+                    <div class="faq-item-title">
+                        <h3 class="medium-text">
+                            2. Какие комиссии применяются при переводе средств в Таиланд?
+                        </h3>
+                        <button class="faq-item-button">
+                            <i data-lucide="plus" x-show="activeId !== 2"></i>
+                            <i data-lucide="minus" x-show="activeId === 2"></i>
+                        </button>
+                    </div>
+                    <div class="faq-content" x-show="activeId === 2" x-collapse>
+                        <p class="faq-item-text base-text">
+                            Комиссия за перевод из России в Таиланд зависит от способа отправки, суммы и валюты.
+                            Фиксированные сборы применяются при банковских переводах, а при других способах комиссия чаще
+                            рассчитывается в процентах от суммы. Также могут взиматься дополнительные расходы на конвертацию
+                            валюты. Перед тем как перевести деньги в Таиланд, рекомендуется заранее уточнить тарифы, чтобы
+                            выбрать наиболее выгодный вариант.На данный момент коммисия за перевод денег составляет всего 2
+                            %. Что является самой выгодной комиссией по переводам среди сервисов
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item" 
+                     :class="{ 'opened': activeId === 3 }" 
+                     @click="activeId = activeId === 3 ? null : 3">
+                    <div class="faq-item-title">
+                        <h3 class="medium-text">
+                            3. Какой обменный курс используется при переводе?
+                        </h3>
+                        <button class="faq-item-button">
+                            <i data-lucide="plus" x-show="activeId !== 3"></i>
+                            <i data-lucide="minus" x-show="activeId === 3"></i>
+                        </button>
+                    </div>
+                    <div class="faq-content" x-show="activeId === 3" x-collapse>
+                        <p class="faq-item-text base-text">
+                            Курс обмена при переводе денег в Таиланд из России зависит от банков, платежных сервисов и
+                            обменных пунктов. Финансовые учреждения устанавливают свои курсы, которые могут отличаться от
+                            рыночных. Перед тем как перевести деньги в Таиланд, рекомендуется сравнить обменные курсы у
+                            разных сервисов, чтобы выбрать наиболее выгодный вариант и минимизировать потери при
+                            конвертации.Так же уточнить точный курс и самый выгодный курс для перевода валюты в Тайланд у
+                            наших менеджеров.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item" 
+                     :class="{ 'opened': activeId === 4 }" 
+                     @click="activeId = activeId === 4 ? null : 4">
+                    <div class="faq-item-title">
+                        <h3 class="medium-text">
+                            4. Как долго занимает перевод денег в Таиланд?
+                        </h3>
+                        <button class="faq-item-button">
+                            <i data-lucide="plus" x-show="activeId !== 4"></i>
+                            <i data-lucide="minus" x-show="activeId === 4"></i>
+                        </button>
+                    </div>
+                    <div class="faq-content" x-show="activeId === 4" x-collapse>
+                        <p class="faq-item-text base-text">
+                            Скорость перевода денег в Таиланд зависит от способа отправки. Внутренний банковский перевод
+                            выполняется мгновенно. Международные переводы могут занять от 1 до нескольких рабочих дней, в
+                            зависимости от банка и способа обработки. Системы мгновенных переводов позволяют отправить
+                            деньги в Тайланд за несколько минут. Как правило наш сервис переводит деньги по миру за пару
+                            часов.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item" 
+                     :class="{ 'opened': activeId === 5 }" 
+                     @click="activeId = activeId === 5 ? null : 5">
+                    <div class="faq-item-title">
+                        <h3 class="medium-text">
+                            5. Существуют ли ограничения на сумму перевода?
+                        </h3>
+                        <button class="faq-item-button">
+                            <i data-lucide="plus" x-show="activeId !== 5"></i>
+                            <i data-lucide="minus" x-show="activeId === 5"></i>
+                        </button>
+                    </div>
+                    <div class="faq-content" x-show="activeId === 5" x-collapse>
+                        <p class="faq-item-text base-text">
+                            Да, переводы в Таиланд могут иметь минимальные и максимальные лимиты, которые зависят от банка
+                            или платежного сервиса. SWIFT-переводы через банки обычно имеют более высокие лимиты, тогда как
+                            онлайн-сервисы (Wise, PayPal, Western Union) и внутренние переводы могут устанавливать дневные и
+                            месячные ограничения. Перед отправкой крупной суммы рекомендуется уточнить лимиты и условия у
+                            выбранного сервиса.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

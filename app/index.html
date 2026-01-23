@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/dist/fav.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@26.0.1/build/css/intlTelInput.css">
     <link rel="stylesheet" href="../scss/style.min.css">
     <title>ATM24</title>
 </head>
@@ -117,27 +120,862 @@
         </div>
     </header>
     <main class="main">
-        <section class="hero">
+        <section class="transfer">
             <div class="container">
-                <div class="hero__body">
-                    <div class="hero__body-wrap">
-                        <span class="medium-text">
-                            <i data-lucide="earth"></i>
-                            209 стран, более 500 000 пунктов выдачи, 121 валюта
-                        </span>
-                        <h1 class="title">
-                            Перевести деньги <br>
-                            из России
-                        </h1>
-                        <p class="medium-text">
-                            Ваши деньги всегда с вами! <br> <br>
-                            Быстро и безопасно. Наличными и Онлайн
-                        </p>
+                <div class="transfer__body">
+                    <div class="transfer__body-breadcrumbs">
+                        <a class="base-text" href="">Главная</a>
+                        <p class="base-text">/</p>
+                        <span class="base-text">Перевод денег из России в Таиланд</span>
                     </div>
-                    <img src="../images/dist/hero.webp" alt="">
+                    <div class="transfer__body-frame">
+                        <div class="frame-information">
+                            <h1 class="soft-title">
+                                Переводы <br> в
+                                <span>Таиланд</span>
+                            </h1>
+                            <p class="base-text">Международные переводы наличными или на банковский счет в <span
+                                    class="change-country">Таиланд</span> для туризма и бизнеса</p>
+                            <div class="frame-information-attr">
+                                <div class="attr-item">
+                                    <div class="icon">
+                                        <i data-lucide="gauge"></i>
+                                    </div>
+                                    <p class="small-text">Перевод быстро и легко</p>
+                                </div>
+                                <div class="attr-item">
+                                    <div class="icon">
+                                        <i data-lucide="user-round"></i>
+                                    </div>
+                                    <p class="small-text">Более 100 переводов в день</p>
+                                </div>
+                                <div class="attr-item">
+                                    <div class="icon">
+                                        <i data-lucide="messages-square"></i>
+                                    </div>
+                                    <p class="small-text">Оперативная поддержка пользователей</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="frame-calculate">
+                            <h3 class="medium-text">Калькулятор обмена:</h3>
+                            <form action="" class="frame-calculate-form">
+                                <div class="calculate-item">
+                                    <p class="base-text">Отдаете</p>
+                                    <div class="calculate-item-wrap">
+                                        <input class="base-text" type="number" placeholder="0.00" name="exchange-calculator">
+                                        <div class="calculate-item-currency" x-data="{ open: false }"
+                                            @click.outside="open = false" @click.stop="open = !open">
+                                            <input type="hidden" name="exchange-currency" id="exchange-currency">
+                                            <div class="main-currency base-text">
+                                                <span class="fi fi-ru"></span>
+                                                <p>RUB СБП</p>
+                                            </div>
+                                            <i data-lucide="chevron-down" :class="{ 'opened': open }"></i>
+                                            <div class="default-modal base-text exchange-modal" x-show="open"
+                                                x-transition.duration.500ms>
+                                                <div class="currency-item" data-currency="RUB СБП">
+                                                    <div class="fi fi-ru"></div>
+                                                    <p>RUB СБП</p>
+                                                </div>
+                                                <div class="currency-item" data-currency="RUB Наличные РФ">
+                                                    <div class="fi fi-ru"></div>
+                                                    <p>RUB Наличные РФ</p>
+                                                </div>
+                                                <div class="currency-item" data-currency="USDT Tether">
+                                                    <div class="fi fi-us"></div>
+                                                    <p>USDT Tether</p>
+                                                </div>
+                                                <div class="currency-item" data-currency="THB Банковский перевод">
+                                                    <div class="fi fi-th"></div>
+                                                    <p>THB Банковский перевод</p>
+                                                </div>
+                                                <div class="currency-item" data-currency="THB Наличные">
+                                                    <div class="fi fi-th"></div>
+                                                    <p>THB Наличные</p>
+                                                </div>
+                                                <div class="currency-item" data-currency="CNY Alipay">
+                                                    <div class="fi fi-cn"></div>
+                                                    <p>CNY Alipay</p>
+                                                </div>
+                                                <div class="currency-item" data-currency="KZT Банковский перевод">
+                                                    <div class="fi fi-kz"></div>
+                                                    <p>KZT Банковский перевод</p>
+                                                </div>
+                                                <div class="currency-item" data-currency="USD Наличные">
+                                                    <div class="fi fi-us"></div>
+                                                    <p>USD Наличные</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="calculate-item">
+                                    <p class="base-text">Получаете</p>
+                                    <div class="calculate-item-wrap">
+                                        <input class="base-text" type="number" placeholder="0.00" name="choices-calculator">
+                                        <div class="calculate-item-currency" x-data="{ open: false }"
+                                            @click.outside="open = false" @click.stop="open = !open">
+                                            <input type="hidden" name="choices-currency" id="choices-currency">
+                                            <div class="main-currency base-text">
+                                                <span class="fi fi-ru"></span>
+                                                <p>RUB СБП</p>
+                                            </div>
+                                            <i data-lucide="chevron-down" :class="{ 'opened': open }"></i>
+                                            <div class="default-modal base-text choices-modal" x-show="open"
+                                                x-transition.duration.500ms>
+                                                <div class="currency-item" data-currency="RUB СБП">
+                                                    <div class="fi fi-ru"></div>
+                                                    <p>RUB СБП</p>
+                                                </div>
+                                                <div class="currency-item" data-currency="RUB Наличные РФ">
+                                                    <div class="fi fi-ru"></div>
+                                                    <p>RUB Наличные РФ</p>
+                                                </div>
+                                                <div class="currency-item" data-currency="USDT Tether">
+                                                    <div class="fi fi-us"></div>
+                                                    <p>USDT Tether</p>
+                                                </div>
+                                                <div class="currency-item" data-currency="THB Банковский перевод">
+                                                    <div class="fi fi-th"></div>
+                                                    <p>THB Банковский перевод</p>
+                                                </div>
+                                                <div class="currency-item" data-currency="THB Наличные">
+                                                    <div class="fi fi-th"></div>
+                                                    <p>THB Наличные</p>
+                                                </div>
+                                                <div class="currency-item" data-currency="CNY Alipay">
+                                                    <div class="fi fi-cn"></div>
+                                                    <p>CNY Alipay</p>
+                                                </div>
+                                                <div class="currency-item" data-currency="KZT Банковский перевод">
+                                                    <div class="fi fi-kz"></div>
+                                                    <p>KZT Банковский перевод</p>
+                                                </div>
+                                                <div class="currency-item" data-currency="USD Наличные">
+                                                    <div class="fi fi-us"></div>
+                                                    <p>USD Наличные</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="calculate-information">
+                                    <p class="small-text">* При обмене сумм менее 50000.00 RUB применяется комиссия.</p>
+                                    <div class="calculate-rate">
+                                        <span class="base-text">Курс обмена:</span>
+                                        <ul class="small-text">
+                                            <li>1 KZT = 0.1403 RUB</li>
+                                            <li>1 RUB = 7.1262 KZT</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="phone-wrap">
+                                    <span class="medium-text">*WhatsApp или Telegram:</span>
+                                    <div class="input-wrap">
+                                        <input class="base-text" placeholder="Введите номер телефона" type="tel" id="phone">
+                                    </div>
+                                    <button class="button button-black">
+                                        Отправить заявку
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+        <section class="advantages">
+            <div class="container">
+                <div class="advantages__body">
+                    <h2 class="soft-title">Почему стоит выбрать наш сервис</h2>
+                    <div class="advantages__body-frame">
+                        <div class="frame-item">
+                            <div class="icon">
+                                <i data-lucide="rotate-3d"></i>
+                            </div>
+                            <h3 class="medium-text">Мгновенная скорость переводов</h3>
+                            <p class="small-text">Мгновенные переводы в любую точку мира</p>
+                        </div>
+                        <div class="frame-item">
+                            <div class="icon">
+                                <i data-lucide="earth"></i>
+                            </div>
+                            <h3 class="medium-text">Наличие физических пунктов выдачи</h3>
+                            <p class="small-text">Мгновенные переводы в любую точку мира Большая сеть пунктов для получения
+                                наличных — более 500.000 офисов по всему миру.</p>
+                        </div>
+        
+                        <div class="frame-item">
+                            <div class="icon">
+                                <i data-lucide="monitor-cloud"></i>
+                            </div>
+                            <h3 class="medium-text">Удобный онлайн-сервис</h3>
+                            <p class="small-text">Удобство и простота использования — всего несколько кликов, и ваши деньги
+                                отправлены в Тайланд.</p>
+                        </div>
+                        <div class="frame-item">
+                            <div class="icon">
+                                <i data-lucide="shield-check"></i>
+                            </div>
+                            <h3 class="medium-text">Безопасность и надежность</h3>
+                            <p class="small-text">Ваши переводы защищены законодательством и проверенными платежными системами,
+                                обеспечивая полную сохранность средств.</p>
+                        </div>
+                        <div class="frame-item">
+                            <div class="icon">
+                                <i data-lucide="diamond-percent"></i>
+                            </div>
+                            <h3 class="medium-text">Фиксированная комиссия</h3>
+                            <p class="small-text">Вы видите курс обмена валют, комиссию и сумму к зачислению получателю до
+                                отправки денег.</p>
+                        </div>
+                        <div class="frame-item">
+                            <div class="icon">
+                                <i data-lucide="banknote-arrow-up"></i>
+                            </div>
+                            <h3 class="medium-text">Разные способы переводов</h3>
+                            <p class="small-text">Переводите деньги как вам удобно — на банковские счета или карты, по номеру
+                                мобильного телефона или на электронные кошельки.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ways">
+            <div class="container">
+                <div class="ways__body">
+                    <h2 class="soft-title">Способы перевода денег в <span class="change-country">Тайланд</span></h2>
+                    <div class="ways__body-frame">
+                        <div class="frame-item">
+                            <img src="../images/dist/way-left.webp" alt="">
+                            <h3 class="medium-text">На банковские счета</h3>
+                            <ul class="small-text">
+                                <li>
+                                    <i data-lucide="circle-check"></i>
+                                    Отправляем деньги в Таиланд на Visa, Mastercard и банковский счет THB
+                                </li>
+                                <li>
+                                    <i data-lucide="circle-check"></i>
+                                    Комиссия АTM24 составляет 2% без надбавок
+                                </li>
+                                <li>
+                                    <i data-lucide="circle-check"></i>
+                                    Зачисление в течении нескольких минут
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="frame-item">
+                            <img src="../images/dist/way-right.webp" alt="">
+                            <h3 class="medium-text">Наличными</h3>
+                            <ul class="small-text">
+                                <li>
+                                    <i data-lucide="circle-check"></i>
+                                    Доставляем THB и USD в крупных городах Таиланда вам в руки
+                                </li>
+                                <li>
+                                    <i data-lucide="circle-check"></i>
+                                    Быстрая и доступная выдача наличных с АТМ без банковской карты
+                                </li>
+                                <li>
+                                    <i data-lucide="circle-check"></i>
+                                    Получение наличных в Тайланде за несколько минут
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="steps">
+            <div class="container">
+                <div class="steps__body">
+                    <h2 class="soft-title">Как происходит перевод в <span class="change-country">Тайланд</span></h2>
+                    <div class="steps__body-frame">
+                        <div class="frame-item">
+                            <div class="number-circle soft-title">1</div>
+                            <h3 class="medium-text">Этап первый</h3>
+                            <p class="small-text">Заполните онлайн-форму <br> на сайте ATM24</p>
+                        </div>
+                        <div class="line"></div>
+                        <div class="frame-item">
+                            <div class="number-circle soft-title">2</div>
+                            <h3 class="medium-text">Этап второй</h3>
+                            <p class="small-text">Предоставьте менеджеру данные для перевода денег</p>
+                        </div>
+                        <div class="line"></div>
+                        <div class="frame-item">
+                            <div class="number-circle soft-title">3</div>
+                            <h3 class="medium-text">Этап третий</h3>
+                            <p class="small-text">Завершите транзакцию и ваш перевод будет отправлен</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="banner">
+            <div class="container">
+                <div class="banner__body">
+                    <img class="banner-img" src="../images/dist/banner.webp" alt="">
+                    <h2 class="soft-title">
+                        Обменять валюту в <span class="change-country">Тайланде</span>
+                    </h2>
+                    <button class="button-black button">
+                        Подробнее
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="reviews">
+            <div class="container">
+                <div class="reviews__body">
+                    <div class="reviews__body-title">
+                        <h2 class="soft-title">Отзывы клиентов</h2>
+                        <p class="small-text">Реальные истории от реальных людей</p>
+                    </div>
+                    <div class="reviews__body-frame">
+                        <div class="frame-main" x-data="reviewWidget()">
+                            <template x-for="(review, index) in visibleReviews" :key="review.id">
+                                <div class="review-item" :class="{ 'hidden': index >= initialCount }">
+                                    <div class="avatar" x-text="getInitial(review.name)"></div>
+                                    <div class="review-item-wrap">
+                                        <div class="review-main">
+                                            <div class="review-main-info">
+                                                <span class="name medium-text" x-text="review.name"></span>
+                                                <div class="informaion">
+                                                    <div class="informaion-service">
+                                                        <div class="circle"></div>
+                                                        <span class="small-text" x-text="review.source"></span>
+                                                    </div>
+                                                    <p class="small-text">•</p>
+                                                    <span class="date small-text" x-text="formatDate(review.date)"></span>
+                                                </div>
+                                            </div>
+                                            <div class="rating">
+                                                <template x-for="i in 5">
+                                                    <i data-lucide="star" :class="{ 'filled': i <= review.rating }"></i>
+                                                </template>
+                                            </div>
+                                        </div>
+                                        <p class="review-text base-text" x-text="review.text"></p>
+                                    </div>
+                                </div>
+                            </template>
+        
+                            <button class="load-more medium-text" @click="loadMore()" x-show="hasMoreReviews">
+                                <p>Показать все отзывы (<span class="count-reviews" x-text="remainingCount"></span>)</p>
+                                <i data-lucide="chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="frame-soft">
+                            <div class="average-rating">
+                                <div class="icon">
+                                    <i data-lucide="star"></i>
+                                </div>
+                                <div class="average-rating-count">
+                                    <span class="title">5.0</span>
+                                    <div class="count-stars">
+                                        <i data-lucide="star"></i>
+                                        <i data-lucide="star"></i>
+                                        <i data-lucide="star"></i>
+                                        <i data-lucide="star"></i>
+                                        <i data-lucide="star"></i>
+                                    </div>
+                                </div>
+                                <p class="base-text">Средний рейтинг на основе <span>843 отзывов</span></p>
+                            </div>
+                            <div class="platform-rating">
+                                <h3 class="medium-text">Рейтинг по платформам</h3>
+                                <ul>
+                                    <li>
+                                        <div class="platform-service">
+                                            <div class="circle"></div>
+                                            <span class="base-text">Trustpilot</span>
+                                        </div>
+                                        <div class="platform-count">
+                                            <span class="base-text">5.0</span>
+                                            <p class="small-text">(43)</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="platform-service">
+                                            <div class="circle"></div>
+                                            <span class="base-text">Google</span>
+                                        </div>
+                                        <div class="platform-count">
+                                            <span class="base-text">5.0</span>
+                                            <p class="small-text">(517)</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="platform-service">
+                                            <div class="circle"></div>
+                                            <span class="base-text">Яндекс</span>
+                                        </div>
+                                        <div class="platform-count">
+                                            <span class="base-text">5.0</span>
+                                            <p class="small-text">(283)</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="platform-review">
+                                <h3 class="medium-text">Оставьте свой отзыв</h3>
+                                <p class="base-text">Поделитесь своим опытом и помогите другим клиентам</p>
+                                <button class="button button-white">
+                                    Написать отзыв
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="world">
+            <div class="container">
+                <div class="world__body">
+                    <div class="world__body-title">
+                        <h2 class="soft-title">Мы работаем по всему миру</h2>
+                        <div class="title-check base-text">
+                            <p>У нас всегда актуальные курсы обмена, <br> <span>обновляются каждую минуту автоматически</span></p>
+                            <i data-lucide="circle-check"></i>
+                        </div>
+                    </div>
+                    <div class="world__body-frame">
+                        <h3 class="medium-text">Выберите страну, куда отправить деньги</h3>
+                        <div class="world__body-popular">
+                            <h4 class="base-text">Популярные страны:</h4>
+                            <div class="popular-wrap">
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-th"></span>
+                                    Таиланд
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-ae"></span>
+                                    Объединённые Арабские Эмираты
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-id"></span>
+                                    Индонезия
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-vn"></span>
+                                    Вьетнам
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-cn"></span>
+                                    Китай
+                                </a>
+                            </div>
+                        </div>
+                        <div class="world__body-popular" x-data="{ open: false }" :class="{ 'opened': open }" >
+                            <h4 class="base-text open-country" @click="open = !open">
+                                Полный список стран:
+                                <i data-lucide="chevron-down"></i>
+                            </h4>
+                            <div class="popular-wrap" x-show="open" x-collapse>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-th"></span>
+                                    Таиланд
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-ae"></span>
+                                    Объединённые Арабские Эмираты
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-id"></span>
+                                    Индонезия
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-vn"></span>
+                                    Вьетнам
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-cn"></span>
+                                    Китай
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-th"></span>
+                                    Таиланд
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-ae"></span>
+                                    Объединённые Арабские Эмираты
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-id"></span>
+                                    Индонезия
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-vn"></span>
+                                    Вьетнам
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-cn"></span>
+                                    Китай
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-th"></span>
+                                    Таиланд
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-ae"></span>
+                                    Объединённые Арабские Эмираты
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-id"></span>
+                                    Индонезия
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-vn"></span>
+                                    Вьетнам
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-cn"></span>
+                                    Китай
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-th"></span>
+                                    Таиланд
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-ae"></span>
+                                    Объединённые Арабские Эмираты
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-id"></span>
+                                    Индонезия
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-vn"></span>
+                                    Вьетнам
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-cn"></span>
+                                    Китай
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-th"></span>
+                                    Таиланд
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-ae"></span>
+                                    Объединённые Арабские Эмираты
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-id"></span>
+                                    Индонезия
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-vn"></span>
+                                    Вьетнам
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-cn"></span>
+                                    Китай
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-th"></span>
+                                    Таиланд
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-ae"></span>
+                                    Объединённые Арабские Эмираты
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-id"></span>
+                                    Индонезия
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-vn"></span>
+                                    Вьетнам
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-cn"></span>
+                                    Китай
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-th"></span>
+                                    Таиланд
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-ae"></span>
+                                    Объединённые Арабские Эмираты
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-id"></span>
+                                    Индонезия
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-vn"></span>
+                                    Вьетнам
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-cn"></span>
+                                    Китай
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-th"></span>
+                                    Таиланд
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-ae"></span>
+                                    Объединённые Арабские Эмираты
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-id"></span>
+                                    Индонезия
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-vn"></span>
+                                    Вьетнам
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-cn"></span>
+                                    Китай
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-th"></span>
+                                    Таиланд
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-ae"></span>
+                                    Объединённые Арабские Эмираты
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-id"></span>
+                                    Индонезия
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-vn"></span>
+                                    Вьетнам
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-cn"></span>
+                                    Китай
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-th"></span>
+                                    Таиланд
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-ae"></span>
+                                    Объединённые Арабские Эмираты
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-id"></span>
+                                    Индонезия
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-vn"></span>
+                                    Вьетнам
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-cn"></span>
+                                    Китай
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-th"></span>
+                                    Таиланд
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-ae"></span>
+                                    Объединённые Арабские Эмираты
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-id"></span>
+                                    Индонезия
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-vn"></span>
+                                    Вьетнам
+                                </a>
+                                <a href="" class="country-item base-text">
+                                    <span class="fi fi-cn"></span>
+                                    Китай
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="request">
+            <div class="container">
+                <div class="request__body">
+                    <h2 class="soft-title">
+                        С ATM24, переводы в <span class="change-country">Таиланде</span> становятся быстрыми, <br> удобными и
+                        безопасными. Присоединяйтесь к нам <br> сегодня и убедитесь в этом сами!
+                    </h2>
+                    <div class="request__body-frame">
+                        <div class="frame-inforamtion">
+                            <h3 class="soft-title">
+                                Оставьте заявку на обмен или перевод
+                            </h3>
+                            <p class="medium-text">
+                                Наш менеджер свяжется с Вами в течение 15 минут и проведет операцию
+                            </p>
+                        </div>
+                        <form action="" class="frame-form">
+                            <div class="input-wrap">
+                                <label for="">
+                                    <i data-lucide="user-round"></i>
+                                </label>
+                                <input class="base-text" type="text" placeholder="Ваше имя">
+                            </div>
+                            <div class="input-wrap">
+                                <label for="">
+                                    <i data-lucide="phone"></i>
+                                </label>
+                                <input class="base-text" placeholder="Введите номер телефона" type="tel" id="phone">
+                            </div>
+                            <div class="input-wrap" x-data="{ open: false }" @click.outside="open = false" @click.stop="open = !open">
+                                <label for="">
+                                    <i data-lucide="banknote-arrow-up"></i>
+                                </label>
+                                <input readonly class="base-text" type="text" id="method" placeholder="Выберете способ">
+                                <div class="default-modal base-text choose-method" x-show="open" x-transition.duration.500ms>
+                                    <span>Выдача через банкомат</span>
+                                    <span>Курьерская доставка</span>
+                                    <span>На счет в банке</span>
+                                    <span>Выдача в офисе</span>
+                                    <span>Перевести деньги через Western Union</span>
+                                </div>
+                            </div>
+                            <button class="button button-black">
+                                Отправить заявку
+                            </button>
+                        </form>
+                        <p class="small-text">*Отправляя эту заявку, вы соглашаетесь с нашей Политикой конфиденциальности.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="faq" x-data="{ activeId: null }">
+            <div class="container">
+                <div class="faq__body">
+                    <h2 class="soft-title">
+                        Часто задаваемые вопросы (FAQ)
+                    </h2>
+                    <div class="faq__body-frame">
+                        <div class="faq-item" 
+                             :class="{ 'opened': activeId === 1 }" 
+                             @click="activeId = activeId === 1 ? null : 1">
+                            <div class="faq-item-title">
+                                <h3 class="medium-text">
+                                    1. Какой способ перевода денег в Таиланд считается наилучшим?
+                                </h3>
+                                <button class="faq-item-button">
+                                    <i data-lucide="plus" x-show="activeId !== 1"></i>
+                                    <i data-lucide="minus" x-show="activeId === 1"></i>
+                                </button>
+                            </div>
+                            <div class="faq-content" x-show="activeId === 1" x-collapse>
+                                <p class="faq-item-text base-text">
+                                    Наилучшие способы отправить деньги в Таиланд — международные SWIFT-переводы, внутренние
+                                    банковские переводы, Western Union и MoneyGram. Внутренний банковский перевод удобен и является
+                                    самым быстрым способом перевода, SWIFT-перевод подходит для отправки крупных сумм на банковский
+                                    счет, а Western Union и MoneyGram позволяют отправлять деньги наличными или на счет с мгновенной
+                                    обработкой. Выбор зависит от суммы, срочности и комиссии.Наш сервис поддерживает все способы
+                                    перевода денег в Тайланд используя только легальные методы.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faq-item" 
+                             :class="{ 'opened': activeId === 2 }" 
+                             @click="activeId = activeId === 2 ? null : 2">
+                            <div class="faq-item-title">
+                                <h3 class="medium-text">
+                                    2. Какие комиссии применяются при переводе средств в Таиланд?
+                                </h3>
+                                <button class="faq-item-button">
+                                    <i data-lucide="plus" x-show="activeId !== 2"></i>
+                                    <i data-lucide="minus" x-show="activeId === 2"></i>
+                                </button>
+                            </div>
+                            <div class="faq-content" x-show="activeId === 2" x-collapse>
+                                <p class="faq-item-text base-text">
+                                    Комиссия за перевод из России в Таиланд зависит от способа отправки, суммы и валюты.
+                                    Фиксированные сборы применяются при банковских переводах, а при других способах комиссия чаще
+                                    рассчитывается в процентах от суммы. Также могут взиматься дополнительные расходы на конвертацию
+                                    валюты. Перед тем как перевести деньги в Таиланд, рекомендуется заранее уточнить тарифы, чтобы
+                                    выбрать наиболее выгодный вариант.На данный момент коммисия за перевод денег составляет всего 2
+                                    %. Что является самой выгодной комиссией по переводам среди сервисов
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faq-item" 
+                             :class="{ 'opened': activeId === 3 }" 
+                             @click="activeId = activeId === 3 ? null : 3">
+                            <div class="faq-item-title">
+                                <h3 class="medium-text">
+                                    3. Какой обменный курс используется при переводе?
+                                </h3>
+                                <button class="faq-item-button">
+                                    <i data-lucide="plus" x-show="activeId !== 3"></i>
+                                    <i data-lucide="minus" x-show="activeId === 3"></i>
+                                </button>
+                            </div>
+                            <div class="faq-content" x-show="activeId === 3" x-collapse>
+                                <p class="faq-item-text base-text">
+                                    Курс обмена при переводе денег в Таиланд из России зависит от банков, платежных сервисов и
+                                    обменных пунктов. Финансовые учреждения устанавливают свои курсы, которые могут отличаться от
+                                    рыночных. Перед тем как перевести деньги в Таиланд, рекомендуется сравнить обменные курсы у
+                                    разных сервисов, чтобы выбрать наиболее выгодный вариант и минимизировать потери при
+                                    конвертации.Так же уточнить точный курс и самый выгодный курс для перевода валюты в Тайланд у
+                                    наших менеджеров.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faq-item" 
+                             :class="{ 'opened': activeId === 4 }" 
+                             @click="activeId = activeId === 4 ? null : 4">
+                            <div class="faq-item-title">
+                                <h3 class="medium-text">
+                                    4. Как долго занимает перевод денег в Таиланд?
+                                </h3>
+                                <button class="faq-item-button">
+                                    <i data-lucide="plus" x-show="activeId !== 4"></i>
+                                    <i data-lucide="minus" x-show="activeId === 4"></i>
+                                </button>
+                            </div>
+                            <div class="faq-content" x-show="activeId === 4" x-collapse>
+                                <p class="faq-item-text base-text">
+                                    Скорость перевода денег в Таиланд зависит от способа отправки. Внутренний банковский перевод
+                                    выполняется мгновенно. Международные переводы могут занять от 1 до нескольких рабочих дней, в
+                                    зависимости от банка и способа обработки. Системы мгновенных переводов позволяют отправить
+                                    деньги в Тайланд за несколько минут. Как правило наш сервис переводит деньги по миру за пару
+                                    часов.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faq-item" 
+                             :class="{ 'opened': activeId === 5 }" 
+                             @click="activeId = activeId === 5 ? null : 5">
+                            <div class="faq-item-title">
+                                <h3 class="medium-text">
+                                    5. Существуют ли ограничения на сумму перевода?
+                                </h3>
+                                <button class="faq-item-button">
+                                    <i data-lucide="plus" x-show="activeId !== 5"></i>
+                                    <i data-lucide="minus" x-show="activeId === 5"></i>
+                                </button>
+                            </div>
+                            <div class="faq-content" x-show="activeId === 5" x-collapse>
+                                <p class="faq-item-text base-text">
+                                    Да, переводы в Таиланд могут иметь минимальные и максимальные лимиты, которые зависят от банка
+                                    или платежного сервиса. SWIFT-переводы через банки обычно имеют более высокие лимиты, тогда как
+                                    онлайн-сервисы (Wise, PayPal, Western Union) и внутренние переводы могут устанавливать дневные и
+                                    месячные ограничения. Перед отправкой крупной суммы рекомендуется уточнить лимиты и условия у
+                                    выбранного сервиса.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
     </main>
     <footer class="footer">
         <div class="container">
@@ -303,8 +1141,11 @@
             </div>
         </div>
     </footer>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.4/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@26.0.1/build/js/intlTelInput.min.js"></script>
     <script src="../js/main.min.js"></script>
 </body>
 

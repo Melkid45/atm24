@@ -1,0 +1,105 @@
+<section class="reviews">
+    <div class="container">
+        <div class="reviews__body">
+            <div class="reviews__body-title">
+                <h2 class="soft-title">Отзывы клиентов</h2>
+                <p class="small-text">Реальные истории от реальных людей</p>
+            </div>
+            <div class="reviews__body-frame">
+                <div class="frame-main" x-data="reviewWidget()">
+                    <template x-for="(review, index) in visibleReviews" :key="review.id">
+                        <div class="review-item" :class="{ 'hidden': index >= initialCount }">
+                            <div class="avatar" x-text="getInitial(review.name)"></div>
+                            <div class="review-item-wrap">
+                                <div class="review-main">
+                                    <div class="review-main-info">
+                                        <span class="name medium-text" x-text="review.name"></span>
+                                        <div class="informaion">
+                                            <div class="informaion-service">
+                                                <div class="circle"></div>
+                                                <span class="small-text" x-text="review.source"></span>
+                                            </div>
+                                            <p class="small-text">•</p>
+                                            <span class="date small-text" x-text="formatDate(review.date)"></span>
+                                        </div>
+                                    </div>
+                                    <div class="rating">
+                                        <template x-for="i in 5">
+                                            <i data-lucide="star" :class="{ 'filled': i <= review.rating }"></i>
+                                        </template>
+                                    </div>
+                                </div>
+                                <p class="review-text base-text" x-text="review.text"></p>
+                            </div>
+                        </div>
+                    </template>
+
+                    <button class="load-more medium-text" @click="loadMore()" x-show="hasMoreReviews">
+                        <p>Показать все отзывы (<span class="count-reviews" x-text="remainingCount"></span>)</p>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                </div>
+                <div class="frame-soft">
+                    <div class="average-rating">
+                        <div class="icon">
+                            <i data-lucide="star"></i>
+                        </div>
+                        <div class="average-rating-count">
+                            <span class="title">5.0</span>
+                            <div class="count-stars">
+                                <i data-lucide="star"></i>
+                                <i data-lucide="star"></i>
+                                <i data-lucide="star"></i>
+                                <i data-lucide="star"></i>
+                                <i data-lucide="star"></i>
+                            </div>
+                        </div>
+                        <p class="base-text">Средний рейтинг на основе <span>843 отзывов</span></p>
+                    </div>
+                    <div class="platform-rating">
+                        <h3 class="medium-text">Рейтинг по платформам</h3>
+                        <ul>
+                            <li>
+                                <div class="platform-service">
+                                    <div class="circle"></div>
+                                    <span class="base-text">Trustpilot</span>
+                                </div>
+                                <div class="platform-count">
+                                    <span class="base-text">5.0</span>
+                                    <p class="small-text">(43)</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="platform-service">
+                                    <div class="circle"></div>
+                                    <span class="base-text">Google</span>
+                                </div>
+                                <div class="platform-count">
+                                    <span class="base-text">5.0</span>
+                                    <p class="small-text">(517)</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="platform-service">
+                                    <div class="circle"></div>
+                                    <span class="base-text">Яндекс</span>
+                                </div>
+                                <div class="platform-count">
+                                    <span class="base-text">5.0</span>
+                                    <p class="small-text">(283)</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="platform-review">
+                        <h3 class="medium-text">Оставьте свой отзыв</h3>
+                        <p class="base-text">Поделитесь своим опытом и помогите другим клиентам</p>
+                        <button class="button button-white">
+                            Написать отзыв
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
