@@ -1,4 +1,4 @@
-<section class="request">
+<section id="request" class="request">
     <div class="container">
         <div class="request__body">
             <h2 class="soft-title">
@@ -25,7 +25,7 @@
                         <label for="">
                             <i data-lucide="phone"></i>
                         </label>
-                        <input class="base-text" placeholder="Введите номер телефона" type="tel" id="phone">
+                        <input data-country="ru" class="base-text" placeholder="Введите номер телефона" type="tel" id="phone">
                     </div>
                     <div class="input-wrap" x-data="{ open: false }" @click.outside="open = false" @click.stop="open = !open">
                         <label for="">
@@ -40,7 +40,7 @@
                             <span>Перевести деньги через Western Union</span>
                         </div>
                     </div>
-                    <button class="button button-black">
+                    <button class="button button-white">
                         Отправить заявку
                     </button>
                 </form>

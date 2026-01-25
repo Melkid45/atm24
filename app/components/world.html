@@ -4,41 +4,63 @@
             <div class="world__body-title">
                 <h2 class="soft-title">Мы работаем по всему миру</h2>
                 <div class="title-check base-text">
-                    <p>У нас всегда актуальные курсы обмена, <br> <span>обновляются каждую минуту автоматически</span></p>
+                    <p>У нас всегда актуальные курсы обмена, <br> <span>обновляются каждую минуту автоматически</span>
+                    </p>
                     <i data-lucide="circle-check"></i>
                 </div>
             </div>
             <div class="world__body-frame">
                 <h3 class="medium-text">Выберите страну, куда отправить деньги</h3>
-                <div class="world__body-popular">
+                <div class="world__body-popular" x-data="{
+                    search: '',
+                    
+                    items: [
+                        { name: 'Таиланд', flag: 'th', link: '/thailand' },
+                        { name: 'Объединённые Арабские Эмираты', flag: 'ae', link: '/uae' },
+                        { name: 'Индонезия', flag: 'id', link: '/indonesia' },
+                        { name: 'Вьетнам', flag: 'vn', link: '/vietnam' },
+                        { name: 'Китай', flag: 'cn', link: '/china' },
+                        { name: 'Турция', flag: 'tr', link: '/turkey' },
+                        { name: 'Египет', flag: 'eg', link: '/egypt' },
+                        { name: 'Испания', flag: 'es', link: '/spain' },
+                        { name: 'Италия', flag: 'it', link: '/italy' }
+                    ],
+                    
+                    get filteredItems() {
+                        if (!this.search.trim()) {
+                            return this.items.slice(0, 5);
+                        }
+                        
+                        const searchLower = this.search.toLowerCase().trim();
+                        return this.items.filter(item => 
+                            item.name.toLowerCase().includes(searchLower)
+                        );
+                    }
+                }">
                     <h4 class="base-text">Популярные страны:</h4>
+                    <div class="search-wrap">
+                        <input x-model="search" placeholder="Введите название страны" class="search-input base-text">
+                        <label for="">
+                            <i data-lucide="search"></i>
+                        </label>
+                    </div>
                     <div class="popular-wrap">
-                        <a href="" class="country-item base-text">
-                            <span class="fi fi-th"></span>
-                            Таиланд
-                        </a>
-                        <a href="" class="country-item base-text">
-                            <span class="fi fi-ae"></span>
-                            Объединённые Арабские Эмираты
-                        </a>
-                        <a href="" class="country-item base-text">
-                            <span class="fi fi-id"></span>
-                            Индонезия
-                        </a>
-                        <a href="" class="country-item base-text">
-                            <span class="fi fi-vn"></span>
-                            Вьетнам
-                        </a>
-                        <a href="" class="country-item base-text">
-                            <span class="fi fi-cn"></span>
-                            Китай
-                        </a>
+                        <template x-for="item in filteredItems" :key="item.name">
+                            <a :href="item.link" class="country-item base-text">
+                                <span :class="`fi fi-${item.flag}`"></span>
+                                <p x-text="item.name"></p>
+                            </a>
+                        </template>
+
+                        <div x-show="search.trim() && filteredItems.length === 0">
+                            Не найдено
+                        </div>
                     </div>
                 </div>
-                <div class="world__body-popular" x-data="{ open: false }" :class="{ 'opened': open }" >
+                <div class="world__body-popular" x-data="{ open: false }" :class="{ 'opened': open }">
                     <h4 class="base-text open-country" @click="open = !open">
                         Полный список стран:
-                        <i data-lucide="chevron-down"></i>
+                        <i data-lucide="chevron-down" :class="{'rotate-180' : open}"></i>
                     </h4>
                     <div class="popular-wrap" x-show="open" x-collapse>
                         <a href="" class="country-item base-text">

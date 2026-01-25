@@ -15,11 +15,14 @@
             a,
             p,
             span {
-                color: var(--color-primary-textsub);
+                color: var(--color-bread-span);
+                font-weight: 300;
             }
+
             a {
                 transition: all 0.5s ease;
-                font-weight: 600;
+                color: var(--color-bread);
+
                 &:hover {
                     color: var(--color-actient);
                 }
@@ -38,7 +41,7 @@
                 gap: 24px;
 
                 h1 {
-                    font-size: 48px;
+                    color: var(--color-black);
 
                     span {
                         color: var(--color-actient);
@@ -50,6 +53,7 @@
                     font-size: 18px;
                     font-weight: 400;
                     line-height: 120%;
+                    color: var(--color-black);
                 }
 
                 &-attr {
@@ -79,8 +83,9 @@
                         }
 
                         p {
-                            color: var(--color-primary-textnav);
+                            color: var(--color-full);
                             font-size: 16px;
+                            font-weight: 300;
                         }
                     }
                 }
@@ -89,7 +94,7 @@
             .frame-calculate {
                 padding: 32px;
                 border: 1px solid var(--color-border);
-                border-radius: 20px;
+                border-radius: 40px;
                 width: 55%;
                 display: flex;
                 flex-direction: column;
@@ -97,7 +102,8 @@
 
                 h3 {
                     font-size: 24px;
-                    font-weight: 500;
+                    font-weight: 400;
+                    color: #1a1a1a;
                 }
 
                 &-form {
@@ -108,12 +114,13 @@
                     .calculate-item {
                         display: flex;
                         flex-direction: column;
-                        gap: 12px;
+                        gap: 10px;
 
                         p {
                             font-size: 16px;
-                            color: var(--color-primary-textsub);
-                            font-weight: 400;
+                            color: #666;
+                            font-weight: 200;
+
                         }
 
                         &-wrap {
@@ -123,13 +130,17 @@
                             border: 1px solid var(--color-border);
                             background: var(--color-bglight);
                             height: 80px;
+                            padding: 12px;
+                            position: relative;
+                            justify-content: space-between;
                             align-items: center;
 
                             input.base-text {
                                 font-size: 16px;
-                                padding: 0 32px;
+                                padding: 0 4px;
                                 background: transparent;
                                 width: 50%;
+                                font-weight: 300;
 
                                 &::-webkit-outer-spin-button,
                                 &::-webkit-inner-spin-button {
@@ -140,14 +151,16 @@
                             .calculate-item-currency {
                                 height: 100%;
                                 background: var(--color-white);
-                                width: 50%;
-                                border-radius: 0 55px 55px 0;
+                                max-width: 50%;
+                                border-radius: 55px 55px;
                                 position: relative;
                                 display: flex;
                                 align-items: center;
-                                padding: 0 32px;
+                                padding: 8px 12px;
                                 justify-content: space-between;
                                 cursor: pointer;
+                                gap: 8px;
+                                border: 1px solid var(--color-border);
 
                                 .main-currency {
                                     display: flex;
@@ -155,22 +168,27 @@
                                     gap: 8px;
 
                                     span {
-                                        width: 27px;
-                                        height: 20px;
+                                        width: 24px;
+                                        height: 24px;
+                                        border-radius: 50%;
+                                        background-size: cover;
                                     }
 
                                     p {
                                         white-space: nowrap;
                                         text-overflow: ellipsis;
                                         overflow: hidden;
-                                        max-width: 150px;
+                                        font-size: 14px;
+                                        font-weight: 500;
+                                        color: var(--color-primary-textnav);
                                     }
                                 }
 
                                 svg {
-                                    width: 20px;
-                                    height: 20px;
+                                    width: 16px;
+                                    height: 16px;
                                     transition: all 0.5s ease;
+                                    color: var(--color-primary-textsub);
 
                                     &.opened {
                                         rotate: 180deg;
@@ -210,6 +228,14 @@
                                             white-space: nowrap;
                                         }
 
+                                        &.choose {
+                                            background: var(--color-bglight);
+
+                                            p {
+                                                color: var(--color-actient);
+                                            }
+                                        }
+
                                         &:hover {
                                             background: var(--color-bglight);
 
@@ -222,29 +248,36 @@
                             }
                         }
                     }
-                    .calculate-information{
+
+                    .calculate-information {
                         display: flex;
-                        justify-content: space-between;
-                        align-items: flex-end;
-                        p{
+                        flex-direction: column;
+                        gap: 16px;
+
+                        p {
                             line-height: 140%;
-                            max-width: 300px;
+                            font-size: 14px;
                         }
                     }
+
                     .calculate-rate {
                         display: flex;
                         flex-direction: column;
-                        align-items: flex-end;
                         gap: 10px;
                         margin-top: 8px;
 
+                        span {
+                            font-weight: 400;
+                        }
+
                         ul {
                             display: flex;
-                            align-items: center;
-                            gap: 16px;
+                            flex-direction: column;
+                            gap: 8px;
 
                             li {
-                                font-style: italic;
+                                font-size: 14px;
+                                color: var(--color-primary-textnav);
                             }
                         }
                     }
@@ -254,12 +287,14 @@
                         flex-direction: column;
                         gap: 8px;
                         margin-top: 8px;
-                        span.medium-text{
+
+                        span.medium-text {
                             font-size: 16px;
-                            font-weight: 500;
+                            font-weight: 400;
                         }
+
                         .input-wrap {
-                            padding: 18px;
+                            padding: 24px 12px;
                             border: 1px solid #66708560;
                             border-radius: 55px;
                             display: flex;
@@ -269,6 +304,7 @@
                             width: 100%;
                             grid-column: span 1;
                             margin-top: 8px;
+
                             .iti {
                                 width: 100%;
                             }
@@ -290,6 +326,7 @@
                             padding: 24px;
                             border-radius: 500px;
                             margin-top: 8px;
+
                             .button-wrap {
                                 justify-content: center;
                             }
@@ -325,10 +362,23 @@
                 gap: 16px;
                 background: var(--color-white);
                 border: 1px solid var(--color-border);
+                position: relative;
 
+                &::before {
+                    position: absolute;
+                    content: '';
+                    height: 80%;
+                    top: 50%;
+                    width: 6px;
+                    background: var(--color-actient);
+                    border-radius: 8px;
+                    left: 0;
+                    transform: translateY(-50%) translateX(-50%);
+                    clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%);
+                }
                 .icon {
-                    width: 48px;
-                    height: 48px;
+                    width: 64px;
+                    height: 64px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -337,6 +387,8 @@
 
                     svg {
                         color: var(--color-actient);
+                        width: 36px;
+                        height: 36px;
                     }
                 }
 
@@ -385,7 +437,7 @@
                 h3 {
                     font-size: 20px;
                     color: var(--color-primary);
-                    font-weight: 500;
+                    font-weight: 600;
                 }
 
                 ul {
@@ -398,6 +450,7 @@
                         position: relative;
                         line-height: 120%;
                         display: flex;
+                        font-weight: 500;
                         align-items: flex-start;
                         gap: 8px;
 
@@ -405,7 +458,8 @@
                             width: 20px;
                             height: 20px;
                             min-width: 20px;
-                            color: var(--color-actient);
+                            color: var(--color-white);
+                            fill: var(--color-actient);
                         }
                     }
                 }
@@ -438,10 +492,12 @@
 
             .frame-item {
                 padding: 32px;
+                border: 1px solid var(--color-border);
+                border-radius: 20px;
                 grid-column: span 2;
                 display: flex;
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-start;
                 gap: 16px;
 
                 .number-circle {
@@ -458,7 +514,6 @@
 
                 p {
                     font-size: 14px;
-                    text-align: center;
                 }
             }
         }

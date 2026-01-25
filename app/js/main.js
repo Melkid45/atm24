@@ -223,10 +223,13 @@ document.querySelector('.open-country').addEventListener('click', function () {
 //Request
 const inputs = document.querySelectorAll("input[type='tel']");
 inputs.forEach((el) => {
+    let iti = el.getAttribute('data-country');
     window.intlTelInput(el, {
+        initialCountry: iti ? iti : "ru",
         loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@26.0.1/build/js/utils.js"),
+        utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@26.0.1/build/js/utils.js"
     });
-})
+});
 
 
 
@@ -238,5 +241,24 @@ methods.forEach((el, index) => {
         el.classList.add('choose');
         let value = el.textContent;
         inputMethod.value = value;
+    })
+})
+
+
+// Exchange 
+
+let chooseModals = document.querySelectorAll('.calculate-item-currency')
+chooseModals.forEach((el) => {
+    let items = el.querySelectorAll('.currency-item')
+    items.forEach((item) => {
+        item.addEventListener('click', function (e) {
+            el.querySelectorAll('.currency-item').forEach((e) => { e.classList.remove('choose') })
+            item.classList.add('choose')
+            let flag = item.querySelector('div').classList.value
+            let value = item.querySelector('p').textContent
+            let mainValue = el.querySelector('.main-currency')
+            mainValue.querySelector('p').textContent = value;
+            mainValue.querySelector('span').classList = flag;
+        })
     })
 })

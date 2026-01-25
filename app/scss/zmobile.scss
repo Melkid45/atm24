@@ -1,41 +1,40 @@
-@media (max-width: 1440px) {
+@media (max-width: 720px) {
     html {
-        font-size: calc(100vw / 1440);
+        font-size: calc(100vw / 360);
     }
 
-
     body {
-        max-width: 1440rem;
+        max-width: 360rem;
     }
 
     .container {
-        max-width: 1160rem;
+        max-width: 328rem;
     }
 
     .base-text {
-        font-size: 14rem;
-    }
-
-    .small-text {
         font-size: 12rem;
     }
 
+    .small-text {
+        font-size: 10rem;
+    }
+
     .medium-text {
-        font-size: 18rem;
+        font-size: 14rem;
     }
 
     .title {
-        font-size: 55rem;
+        font-size: 42rem;
     }
 
     .soft-title {
-        font-size: 40rem;
+        font-size: 28rem;
     }
 
     .button {
-        font-size: 16rem;
+        font-size: 14rem;
         border-radius: 30rem;
-        padding: 12rem 36rem;
+        padding: 12rem 28rem;
     }
 
     .button-white {
@@ -44,10 +43,10 @@
 
 
     :root {
-        --first-section: 150rem;
-        --padding-section: 50rem;
-        --section-gap: 48rem;
-        --section-gap-more: 64rem;
+        --first-section: 80rem;
+        --padding-section: 25rem;
+        --section-gap: 24rem;
+        --section-gap-more: 42rem;
     }
 
 
@@ -78,11 +77,11 @@
     }
 
     .logo {
-        gap: 12rem;
+        gap: 10rem;
 
         svg {
-            width: 41rem;
-            height: 39rem;
+            width: 36rem;
+            height: 36rem;
         }
 
         &-wrap {
@@ -91,6 +90,7 @@
             }
 
             p {
+                display: none;
                 font-size: 12rem;
             }
         }
@@ -102,7 +102,7 @@
         &__body {
 
             &-title {
-                gap: 16rem;
+                gap: 8rem;
 
                 p {
                     font-size: 16rem;
@@ -110,31 +110,34 @@
             }
 
             &-frame {
+                display: flex;
+                flex-direction: column;
+
                 .frame-main {
                     gap: 16rem;
 
                     .review-item {
-                        border-radius: 20rem;
+                        border-radius: 12rem;
                         border: 1rem solid var(--color-border);
-                        padding: 24rem;
-                        gap: 16rem;
+                        padding: 16rem;
+                        gap: 12rem;
 
                         .avatar {
-                            width: 48rem;
-                            min-width: 48rem;
-                            font-size: 16rem;
+                            width: 40rem;
+                            min-width: 40rem;
+                            font-size: 14rem;
                         }
 
                         &-wrap {
-                            gap: 12rem;
+                            gap: 8rem;
 
                             .review-main {
                                 .rating {
-                                    gap: 4rem;
+                                    gap: 2rem;
 
                                     svg {
-                                        width: 18rem;
-                                        height: 18rem;
+                                        width: 12rem;
+                                        height: 12rem;
                                     }
                                 }
 
@@ -142,18 +145,19 @@
                                     gap: 4rem;
 
                                     .name {
-                                        font-size: 16rem;
+                                        font-size: 14rem;
                                     }
 
                                     .informaion {
-                                        gap: 8rem;
+                                        gap: 4rem;
+                                        flex-wrap: wrap;
 
                                         &-service {
-                                            gap: 8rem;
+                                            gap: 4rem;
 
                                             .circle {
-                                                width: 8rem;
-                                                min-height: 8rem;
+                                                width: 6rem;
+                                                min-height: 6rem;
                                             }
                                         }
                                     }
@@ -161,7 +165,8 @@
                             }
 
                             .review-text {
-                                font-size: 16rem;
+                                font-size: 12rem;
+                                font-weight: 400;
                             }
                         }
                     }
@@ -170,47 +175,47 @@
                         gap: 8rem;
                         padding: 16rem 0rem;
                         border: 1rem solid var(--color-border);
-                        border-radius: 20rem;
-                        font-size: 16rem;
+                        border-radius: 12rem;
+                        font-size: 14rem;
 
                         svg {
-                            width: 20rem;
+                            width: 16rem;
                         }
                     }
                 }
 
                 .frame-soft {
-                    gap: 24rem;
+                    gap: 16rem;
 
                     .average-rating {
-                        padding: 33rem;
-                        border-radius: 20rem;
+                        padding: 24rem;
+                        border-radius: 12rem;
                         border: 1rem solid var(--color-border);
-                        gap: 12rem;
+                        gap: 8rem;
 
                         .icon {
-                            width: 80rem;
+                            width: 64rem;
 
                             svg {
-                                width: 40rem;
-                                height: 40rem;
+                                width: 32rem;
+                                height: 32rem;
                             }
                         }
 
                         &-count {
-                            margin-top: 4rem;
+                            margin-top: 2rem;
                             gap: 8rem;
 
                             span {
-                                font-size: 48rem;
+                                font-size: 36rem;
                             }
 
                             .count-stars {
                                 gap: 4rem;
 
                                 svg {
-                                    width: 20rem;
-                                    height: 20rem;
+                                    width: 16rem;
+                                    height: 16rem;
                                 }
                             }
                         }
@@ -218,7 +223,7 @@
 
                     .platform-rating {
                         padding: 24rem;
-                        border-radius: 20rem;
+                        border-radius: 12rem;
                         border: 1rem solid var(--color-border);
                         gap: 16rem;
 
@@ -245,7 +250,7 @@
 
                     .platform-review {
                         padding: 24rem;
-                        border-radius: 20rem;
+                        border-radius: 12rem;
                         gap: 8rem;
                     }
                 }
@@ -259,16 +264,21 @@
                 gap: 16rem;
 
                 .faq-item {
-                    padding: 24rem;
+                    padding: 16rem;
                     border: 1rem solid var(--color-border);
                     border-radius: 20rem;
 
                     &-title {
+                        h3 {
+                            max-width: 240rem;
+                        }
+
                         button {
-                            width: 40rem;
-                            svg{
-                                width: 24rem;
-                                height: 24rem;
+                            width: 24rem;
+                            min-width: 24rem;
+
+                            svg {
+                                height: 16rem;
                             }
                         }
                     }
@@ -289,19 +299,25 @@
     .world {
 
         &__body {
+            h2 {
+                text-align: center;
+            }
 
             &-title {
+                flex-direction: column;
+                gap: 24rem;
 
                 .title-check {
-                    padding: 16rem 16rem 16rem 32rem;
+                    width: 100%;
+                    padding: 12rem 12rem 12rem 24rem;
                     border-radius: 55rem;
                     border: 1rem solid var(--color-border);
-                    gap: 16rem;
-                    font-size: 14rem;
+                    justify-content: space-between;
+                    font-size: 10rem;
 
                     svg {
-                        width: 42rem;
-                        height: 32rem;
+                        width: 36rem;
+                        height: 30rem;
                     }
                 }
             }
@@ -314,40 +330,43 @@
                 }
 
                 .world__body-popular {
-                    gap: 24rem;
+                    gap: 16rem;
+                    width: 100%;
 
                     h4 {
                         font-size: 16rem;
-                        svg{
-                            width: 24rem;
-                            height: 24rem;
-                        }
                     }
-                    .search-wrap{
-                        min-width: 400rem;
+
+                    .search-wrap {
+                        min-width: auto;
+                        width: 100%;
                         padding: 8rem 12rem;
                         gap: 8rem;
                         border: 1rem solid var(--color-black);
-                        label{
-                            width: 32rem;
-                            min-width: 32rem;
+                        max-width: none;
+                        label {
+                            width: 24rem;
+                            min-width: 24rem;
                             border-radius: 6rem;
-                            svg{
-                                width: 20rem;
-                                height: 18rem;
+
+                            svg {
+                                width: 16rem;
+                                height: 16rem;
                             }
                         }
                     }
                     .popular-wrap {
-                        gap: 24rem;
+                        width: 100%;
+                        gap: 12rem;
+                        grid-template-columns: repeat(2, 1fr);
 
                         .country-item {
                             border-radius: 5rem;
                             gap: 12rem;
-                            font-size: 16rem;
+                            font-size: 12rem;
                             span {
-                                width: 34rem;
-                                min-width: 34rem;
+                                width: 32rem;
+                                min-width: 32rem;
                                 border: 1rem solid var(--color-border);
                             }
                         }
@@ -361,38 +380,47 @@
     .request {
 
         &__body {
+            h2 {
+                font-size: 20rem;
+
+                br {
+                    display: none;
+                }
+            }
 
             &-frame {
-                padding: 32rem;
-                gap: 32rem;
-                border-radius: 20rem;
+                padding: 24rem;
+                gap: 24rem;
+                border-radius: 12rem;
                 border: 1rem solid var(--color-border);
 
                 .frame-inforamtion {
                     gap: 12rem;
 
                     h3 {
-                        font-size: 32rem;
+                        font-size: 24rem;
                     }
                 }
 
                 .frame-form {
-                    gap: 20rem;
+                    gap: 12rem;
+                    display: flex;
+                    flex-direction: column;
 
                     .input-wrap {
-                        padding: 12rem;
+                        padding: 8rem;
                         border: 1rem solid #66708560;
                         border-radius: 6rem;
                         gap: 8rem;
 
                         label {
-                            width: 32rem;
-                            min-width: 32rem;
+                            width: 24rem;
+                            min-width: 24rem;
                             border-radius: 6rem;
 
                             svg {
                                 width: 20rem;
-                                height: 18rem;
+                                height: 14rem;
                             }
                         }
                     }
@@ -404,38 +432,80 @@
 
     .header {
         box-shadow: 0 4rem 20rem rgba(0, 0, 0, 0.03);
-
+        transition: all 0.5s ease;
+        height: 48.2rem;
         &__body {
+            &:has(.burger.open){
+                .header__body-mobile-nav{
+                    transform: translateX(0);
+                }
+            }
+            .header__body-mobile-nav{
+                display: block;
+                transition: all 0.5s ease;
+                height: calc(100vh - 48.2rem);
+                position: absolute;
+                top: 48.2rem;
+                left: 0;
+                width: 100%;
+                background: var(--color-white);
+                transform: translateX(-100%);
+                ul{
+                    padding: 40rem 20rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16rem;
+                    li{
+                        display: flex;
+                        flex-direction: column;
+                        span{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 100%;
+                            svg{
+                                transition: all 0.3s ease;
+                                &.rotate-180{
+                                    rotate: 180deg;
+                                }
+                            }
+                        }
+                        div{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 12rem;
+                            padding-top: 16rem;
+                        }
+                    }
+                }
+            }
             &-top {
                 padding: 6rem 0;
                 border-bottom: 1rem solid var(--color-border);
 
                 .action {
-                    gap: 16rem;
+                    gap: 8rem;
 
                     .phone {
-                        gap: 8rem;
-
-                        svg {
-                            width: 14rem;
-                            height: 14rem;
-                        }
+                        display: none !important;
                     }
 
                     &-whatsapp {
-                        padding: 10rem 18rem;
+                        padding: 8rem 14rem;
                         gap: 8rem;
                         border-radius: 50rem;
-
+                        span{
+                            display: none;
+                        }
                         svg {
-                            width: 14rem;
-                            height: 14rem;
+                            width: 16rem;
+                            height: 16rem;
                         }
                     }
 
                     .switcher {
                         &__main {
-                            padding: 8rem 16rem;
+                            padding: 9rem 12rem;
                             gap: 6rem;
                             border-radius: 50rem;
 
@@ -445,10 +515,49 @@
                             }
                         }
                     }
+                    .burger{
+                        display: flex;
+                        flex-direction: column;
+                        width: 24rem;
+                        height: 24rem;
+                        padding: 4rem;
+                        justify-content: space-between;
+                        position: relative;
+                        align-items: center;
+                        transition: all 0.5s ease;
+                        background: transparent;
+                        border-radius: 6rem;
+                        &.open{
+                            justify-content: center;
+                            background: var(--color-pale);
+                            span{
+                                position: absolute;
+                                background: var(--color-actient);
+                                scale: 0.8;
+                            }
+                            span:nth-child(1){
+                                rotate: 45deg;
+                            }
+                            span:nth-child(2){
+                                opacity: 0;
+                            }
+                            span:nth-child(3){
+                                rotate: -45deg;
+                            }
+                        }
+                        span{
+                            width: 100%;
+                            background: var(--color-black);
+                            height: 1.5rem;
+                            border-radius: 2rem;
+                            transition: all 0.5s ease;
+                        }
+                    }
                 }
             }
 
             &-nav {
+                display: none;
                 padding: 4rem 0;
 
                 ul {
@@ -475,33 +584,40 @@
 
 
     .footer {
-        padding: 60rem 0 30rem;
+        padding: 48rem 0 24rem;
         border-top: 1rem solid var(--color-border);
 
         &__body {
-            gap: 60rem;
+            gap: 48rem;
+            flex-direction: column;
 
             &-main {
+                flex-direction: column;
+                gap: 32rem;
 
                 .action {
-                    gap: 20rem;
+                    gap: 24rem;
 
                     .social {
                         gap: 12rem;
 
                         a {
-                            width: 40rem;
-                            border-radius: 8rem;
+                            width: 36rem;
+                            border-radius: 6rem;
 
                             svg {
-                                width: 24rem;
-                                height: 24rem;
+                                width: 20rem;
+                                height: 20rem;
                             }
                         }
                     }
                 }
 
                 nav {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 32rem;
+                    width: 100%;
 
                     span {
                         font-size: 16rem;
@@ -514,6 +630,8 @@
                             gap: 12rem;
 
                             li {
+                                font-size: 14rem;
+
                                 &::after {
                                     height: 2rem;
                                 }
@@ -524,15 +642,25 @@
             }
 
             &-contact {
-                gap: 24rem;
-                padding-top: 40rem;
+                display: flex;
+                gap: 16rem;
+                padding-top: 48rem;
                 border-top: 1rem solid var(--color-border);
+                flex-direction: column;
 
                 a {
                     padding: 24rem;
                     gap: 16rem;
                     border-radius: 16rem;
                     border: 1rem solid var(--color-border);
+
+                    p {
+                        font-size: 12rem;
+                    }
+
+                    span {
+                        font-size: 18rem;
+                    }
 
                     .icon {
                         width: 48rem;
@@ -551,11 +679,22 @@
             }
 
             &-soft {
-                padding-top: 30rem;
+                flex-direction: column;
+                align-items: center;
+                gap: 16rem;
+                padding-top: 24rem;
                 border-top: 1rem solid var(--color-border);
 
+                p,
+                a {
+                    font-size: 12rem;
+                    font-weight: 400;
+                }
+
                 .soft-rights {
-                    gap: 24rem;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 8rem;
                 }
             }
         }
@@ -569,46 +708,50 @@
             }
 
             &-frame {
+                flex-direction: column;
+                gap: 32rem;
+
                 .frame-information {
-                    gap: 24rem;
+                    gap: 16rem;
 
                     h1 {
-                        font-size: 48rem;
+                        font-size: 42rem;
                     }
 
                     p {
-                        max-width: 365rem;
-                        font-size: 18rem;
+                        max-width: 305rem;
+                        font-size: 16rem;
                     }
 
                     &-attr {
-                        gap: 16rem;
-                        margin-top: 8rem;
+                        gap: 12rem;
+                        margin-top: 4rem;
 
                         .attr-item {
                             gap: 16rem;
 
                             .icon {
-                                width: 48rem;
+                                width: 32rem;
                                 border-radius: 6rem;
 
                                 svg {
-                                    height: 32rem;
+                                    height: 24rem;
                                 }
                             }
 
                             p {
-                                font-size: 16rem;
+                                font-size: 14rem;
                             }
                         }
                     }
                 }
 
                 .frame-calculate {
-                    padding: 32rem;
+                    padding: 24rem;
                     border: 1rem solid var(--color-border);
-                    border-radius: 20rem;
-                    gap: 32rem;
+                    border-radius: 12rem;
+                    gap: 24rem;
+                    width: 100%;
 
                     h3 {
                         font-size: 24rem;
@@ -621,54 +764,54 @@
                             gap: 12rem;
 
                             p {
-                                font-size: 16rem;
+                                font-size: 14rem;
                             }
 
                             &-wrap {
                                 border-radius: 55rem;
                                 border: 1rem solid var(--color-border);
-                                height: 80rem;
-                                padding: 12rem;
+                                height: 60rem;
 
                                 input.base-text {
-                                    font-size: 16rem;
+                                    font-size: 14rem;
                                     padding: 0 4rem;
                                 }
 
                                 .calculate-item-currency {
                                     border-radius: 55rem;
-                                    padding: 8rem 12rem;
-                                    gap: 8rem;
-                                    border: 1rem solid var(--color-border);
+                                    padding: 0 4rem;
 
                                     .main-currency {
                                         gap: 8rem;
 
                                         span {
-                                            width: 24rem;
-                                            height: 24rem;
+                                            width: 20rem;
+                                            height: 20rem;
                                         }
 
                                         p {
-                                            max-width: none;
-                                            font-size: 14rem;
+                                            max-width: 65rem;
+                                            font-size: 12rem;
                                         }
                                     }
 
                                     svg {
-                                        width: 16rem;
-                                        height: 16rem;
+                                        width: 12rem;
+                                        height: 12rem;
                                     }
 
                                     .default-modal {
+                                        left: auto;
+                                        right: 0;
+
                                         .currency-item {
                                             gap: 8rem;
                                             padding: 8rem 14rem;
                                             border-radius: 6rem;
 
                                             div {
-                                                width: 27rem;
-                                                height: 20rem;
+                                                width: 20rem;
+                                                height: 16rem;
                                             }
                                         }
                                     }
@@ -679,7 +822,7 @@
                         .calculate-information {
                             p {
                                 max-width: none;
-                                font-size: 14rem;
+                                font-size: 12rem;
                             }
                         }
 
@@ -691,7 +834,7 @@
                                 gap: 8rem;
 
                                 li {
-                                    font-size: 14rem;
+                                    font-size: 12rem;
                                 }
                             }
                         }
@@ -701,11 +844,11 @@
                             margin-top: 8rem;
 
                             span.medium-text {
-                                font-size: 16rem;
+                                font-size: 14rem;
                             }
 
                             .input-wrap {
-                                padding: 24rem;
+                                padding: 18rem;
                                 border: 1rem solid #66708560;
                                 border-radius: 55rem;
                                 gap: 8rem;
@@ -713,7 +856,7 @@
                             }
 
                             .button {
-                                padding: 24rem;
+                                padding: 18rem;
                                 border-radius: 500rem;
                                 margin-top: 8rem;
                             }
@@ -729,33 +872,36 @@
         padding: var(--padding-section) 0rem;
 
         &__body {
+            h2 {
+                text-align: center;
+            }
+
             &-frame {
-                gap: 24rem;
+                gap: 16rem;
+                grid-template-columns: repeat(2, 1fr);
 
                 .frame-item {
-                    padding: 32rem;
-                    border-radius: 20rem;
-                    gap: 16rem;
+                    padding: 16rem;
+                    border-radius: 12rem;
+                    gap: 12rem;
                     border: 1rem solid var(--color-border);
 
-                    &::before {
-                        width: 6rem;
-                        border-radius: 8rem;
-                    }
-
                     .icon {
-                        width: 48rem;
-                        height: 48rem;
+                        width: 32rem;
+                        height: 32rem;
                         border-radius: 6rem;
-
-                        svg {
-                            width: 36rem;
-                            height: 36rem;
+                        svg{
+                            width: 24rem;
+                            height: 24rem;
                         }
                     }
 
+                    h3 {
+                        font-size: 12rem;
+                    }
+
                     p {
-                        font-size: 14rem;
+                        font-size: 10rem;
                     }
                 }
             }
@@ -764,37 +910,43 @@
 
     .ways {
         &__body {
+            h2 {
+                text-align: center;
+            }
+
             &-frame {
-                gap: 32rem;
+                display: flex;
+                flex-direction: column;
+                gap: 24rem;
 
                 .frame-item {
                     border: 1rem solid var(--color-border);
-                    border-radius: 20rem;
-                    padding: 32rem;
+                    border-radius: 12rem;
+                    padding: 24rem;
                     gap: 24rem;
 
                     img {
-                        width: 165rem;
-                        height: 100rem;
+                        width: 87.5rem;
+                        height: 50rem;
                         right: 32rem;
-                        top: -50rem;
+                        top: -25rem;
                     }
 
                     h3 {
-                        font-size: 20rem;
+                        font-size: 18rem;
                     }
 
                     ul {
                         gap: 12rem;
 
                         li {
-                            font-size: 16rem;
+                            font-size: 12rem;
                             gap: 8rem;
 
                             svg {
-                                width: 20rem;
-                                height: 20rem;
-                                min-width: 20rem;
+                                width: 16rem;
+                                height: 16rem;
+                                min-width: 16rem;
                             }
                         }
                     }
@@ -805,18 +957,29 @@
 
     .steps {
         &__body {
+            h2 {
+                text-align: center;
+            }
+
             &-frame {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 gap: 24rem;
 
                 .line {
-                    height: 2rem;
+                    width: 2rem;
+                    height: 42rem;
                 }
 
                 .frame-item {
-                    padding: 32rem;
+                    padding: 0rem 32rem;
+                    align-items: center;
                     gap: 16rem;
-                    border-radius: 20rem;
-                    border: 1rem solid var(--color-border);
+                    grid-row: span 2;
+                    grid-column: auto;
+                    border: none;
+                    border-radius: 0%;
                     .number-circle {
                         width: 64rem;
                         height: 64rem;
@@ -825,6 +988,7 @@
 
                     p {
                         font-size: 14rem;
+                        text-align: center;
                     }
                 }
             }
@@ -833,10 +997,18 @@
 
     .banner {
         &__body {
-            padding: 48rem;
-            border-radius: 20rem;
+            padding: 24rem;
+            border-radius: 12rem;
             border: 1rem solid var(--color-border);
-            gap: 72rem;
+            gap: 36rem;
+            padding-bottom: 282rem;
+
+            img {
+                height: 265rem;
+                width: 100%;
+                top: auto;
+                bottom: 0;
+            }
         }
     }
 }

@@ -41,7 +41,7 @@
                         </div>
                     </a>
                     <div class="action">
-                        <a class="phone base-text" href="">
+                        <a class="phone base-text desk" href="">
                             <i data-lucide="phone-call"></i>
                             +66-918-464-597
                         </a>
@@ -51,7 +51,7 @@
                                 <path
                                     d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
                             </svg>
-                            WhatsApp
+                            <span>WhatsApp</span>
                         </a>
                         <div class="switcher" x-data="{ open: false }" @click.outside="open = false">
                             <div @click.stop="open = !open" class="switcher__main base-text">
@@ -65,6 +65,11 @@
                                 <a href="#">TN</a>
                             </div>
                         </div>
+                        <button class="burger" x-data="{ open: false }" :class="{ 'open': open }" @click="open = !open">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
                     </div>
                 </div>
                 <nav class="header__body-nav">
@@ -116,6 +121,63 @@
                         </li>
                     </ul>
                 </nav>
+                <nav class="header__body-mobile-nav">
+                    <ul>
+                        <li class="medium-text" x-data="{ open: false }" @click="open = !open">
+                            <span>
+                                Переводы
+                                <i data-lucide="chevron-down" :class="{ 'rotate-180': open }"></i>
+                            </span>
+                            <div class="base-text" x-show="open" x-collapse>
+                                <a href="">Таиланд</a>
+                                <a href="">ОАЭ</a>
+                                <a href="">Переводы по номеру карты</a>
+                                <a class="actient" href="">Все страны</a>
+                            </div>
+                        </li>
+                        <li class="medium-text" x-data="{ open: false }" @click="open = !open">
+                            <span>
+                                Обмен валюты
+                                <i data-lucide="chevron-down" :class="{ 'rotate-180': open }"></i>
+                            </span>
+                            <div class="base-text" x-show="open" x-collapse>
+                                <a href="">Таиланд</a>
+                                <a href="">Турция</a>
+                                <a class="actient" href="">Все страны</a>
+                            </div>
+                        </li>
+                        <li class="medium-text" x-data="{ open: false }" @click="open = !open">
+                            <span>
+                                Сервисы
+                                <i data-lucide="chevron-down" :class="{ 'rotate-180': open }"></i>
+                            </span>
+                            <div class="base-text" x-show="open" x-collapse>
+                                <a href="">WesternUnion</a>
+                                <a href="">Swift</a>
+                            </div>
+                        </li>
+                        <li class="medium-text">
+                            <a href="">
+                                О нас
+                            </a>
+                        </li>
+                        <li class="medium-text">
+                            <a href="">
+                                Контакты
+                            </a>
+                        </li>
+                        <li class="medium-text" x-data="{ open: false }" @click="open = !open">
+                            <span>
+                                Полезная информация
+                                <i data-lucide="chevron-down" :class="{ 'rotate-180': open }"></i>
+                            </span>
+                            <div class="base-text" x-show="open" x-collapse>
+                                <a href="">Стать партнером</a>
+                                <a href="">Инвестиции</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header>
@@ -130,8 +192,8 @@
                     </div>
                     <div class="transfer__body-frame">
                         <div class="frame-information">
-                            <h1 class="soft-title">
-                                Переводы <br> в
+                            <h1 class="title">
+                                Переводы в <br>
                                 <span>Таиланд</span>
                             </h1>
                             <p class="base-text">Международные переводы наличными или на банковский счет в <span
@@ -167,14 +229,14 @@
                                         <div class="calculate-item-currency" x-data="{ open: false }"
                                             @click.outside="open = false" @click.stop="open = !open">
                                             <input type="hidden" name="exchange-currency" id="exchange-currency">
-                                            <div class="main-currency base-text">
+                                            <div class="main-currency exchange-currency base-text">
                                                 <span class="fi fi-ru"></span>
                                                 <p>RUB СБП</p>
                                             </div>
                                             <i data-lucide="chevron-down" :class="{ 'opened': open }"></i>
                                             <div class="default-modal base-text exchange-modal" x-show="open"
                                                 x-transition.duration.500ms>
-                                                <div class="currency-item" data-currency="RUB СБП">
+                                                <div class="currency-item choose" data-currency="RUB СБП">
                                                     <div class="fi fi-ru"></div>
                                                     <p>RUB СБП</p>
                                                 </div>
@@ -217,14 +279,14 @@
                                         <div class="calculate-item-currency" x-data="{ open: false }"
                                             @click.outside="open = false" @click.stop="open = !open">
                                             <input type="hidden" name="choices-currency" id="choices-currency">
-                                            <div class="main-currency base-text">
+                                            <div class="main-currency choices-currency base-text">
                                                 <span class="fi fi-ru"></span>
                                                 <p>RUB СБП</p>
                                             </div>
                                             <i data-lucide="chevron-down" :class="{ 'opened': open }"></i>
                                             <div class="default-modal base-text choices-modal" x-show="open"
                                                 x-transition.duration.500ms>
-                                                <div class="currency-item" data-currency="RUB СБП">
+                                                <div class="currency-item choose" data-currency="RUB СБП">
                                                     <div class="fi fi-ru"></div>
                                                     <p>RUB СБП</p>
                                                 </div>
@@ -261,7 +323,6 @@
                                     </div>
                                 </div>
                                 <div class="calculate-information">
-                                    <p class="small-text">* При обмене сумм менее 50000.00 RUB применяется комиссия.</p>
                                     <div class="calculate-rate">
                                         <span class="base-text">Курс обмена:</span>
                                         <ul class="small-text">
@@ -269,11 +330,12 @@
                                             <li>1 RUB = 7.1262 KZT</li>
                                         </ul>
                                     </div>
+                                    <p class="small-text">* При обмене сумм менее 50000.00 RUB применяется комиссия.</p>
                                 </div>
                                 <div class="phone-wrap">
                                     <span class="medium-text">*WhatsApp или Telegram:</span>
                                     <div class="input-wrap">
-                                        <input class="base-text" placeholder="Введите номер телефона" type="tel" id="phone">
+                                        <input data-country="ru" class="base-text" placeholder="Введите номер телефона" type="tel" id="phone">
                                     </div>
                                     <button class="button button-black">
                                         Отправить заявку
@@ -312,7 +374,7 @@
                             </div>
                             <h3 class="medium-text">Удобный онлайн-сервис</h3>
                             <p class="small-text">Удобство и простота использования — всего несколько кликов, и ваши деньги
-                                отправлены в Тайланд.</p>
+                                отправлены в Таиланд.</p>
                         </div>
                         <div class="frame-item">
                             <div class="icon">
@@ -345,7 +407,7 @@
         <section class="ways">
             <div class="container">
                 <div class="ways__body">
-                    <h2 class="soft-title">Способы перевода денег в <span class="change-country">Тайланд</span></h2>
+                    <h2 class="soft-title">Способы перевода денег в <span class="change-country">Таиланд</span></h2>
                     <div class="ways__body-frame">
                         <div class="frame-item">
                             <img src="../images/dist/way-left.webp" alt="">
@@ -353,7 +415,7 @@
                             <ul class="small-text">
                                 <li>
                                     <i data-lucide="circle-check"></i>
-                                    Отправляем деньги в Таиланд на Visa, Mastercard и банковский счет THB
+                                    Отправляем деньги в Таиланд на Visa, Mastercard <br> и банковский счет THB
                                 </li>
                                 <li>
                                     <i data-lucide="circle-check"></i>
@@ -371,15 +433,15 @@
                             <ul class="small-text">
                                 <li>
                                     <i data-lucide="circle-check"></i>
-                                    Доставляем THB и USD в крупных городах Таиланда вам в руки
+                                    Доставляем THB и USD в крупных городах <br> Таиланда вам в руки
                                 </li>
                                 <li>
                                     <i data-lucide="circle-check"></i>
-                                    Быстрая и доступная выдача наличных с АТМ без банковской карты
+                                    Быстрая и доступная выдача наличных с АТМ без <br> банковской карты
                                 </li>
                                 <li>
                                     <i data-lucide="circle-check"></i>
-                                    Получение наличных в Тайланде за несколько минут
+                                    Получение наличных в Таиланде за несколько минут
                                 </li>
                             </ul>
                         </div>
@@ -390,7 +452,7 @@
         <section class="steps">
             <div class="container">
                 <div class="steps__body">
-                    <h2 class="soft-title">Как происходит перевод в <span class="change-country">Тайланд</span></h2>
+                    <h2 class="soft-title">Как происходит перевод в <span class="change-country">Таиланд</span></h2>
                     <div class="steps__body-frame">
                         <div class="frame-item">
                             <div class="number-circle soft-title">1</div>
@@ -418,11 +480,11 @@
                 <div class="banner__body">
                     <img class="banner-img" src="../images/dist/banner.webp" alt="">
                     <h2 class="soft-title">
-                        Обменять валюту в <span class="change-country">Тайланде</span>
+                        Обменять валюту в <span class="change-country">Таиланде</span>
                     </h2>
-                    <button class="button-black button">
+                    <a href="#request" class="button-black button">
                         Подробнее
-                    </button>
+                    </a>
                 </div>
             </div>
         </section>
@@ -537,41 +599,63 @@
                     <div class="world__body-title">
                         <h2 class="soft-title">Мы работаем по всему миру</h2>
                         <div class="title-check base-text">
-                            <p>У нас всегда актуальные курсы обмена, <br> <span>обновляются каждую минуту автоматически</span></p>
+                            <p>У нас всегда актуальные курсы обмена, <br> <span>обновляются каждую минуту автоматически</span>
+                            </p>
                             <i data-lucide="circle-check"></i>
                         </div>
                     </div>
                     <div class="world__body-frame">
                         <h3 class="medium-text">Выберите страну, куда отправить деньги</h3>
-                        <div class="world__body-popular">
+                        <div class="world__body-popular" x-data="{
+                            search: '',
+                            
+                            items: [
+                                { name: 'Таиланд', flag: 'th', link: '/thailand' },
+                                { name: 'Объединённые Арабские Эмираты', flag: 'ae', link: '/uae' },
+                                { name: 'Индонезия', flag: 'id', link: '/indonesia' },
+                                { name: 'Вьетнам', flag: 'vn', link: '/vietnam' },
+                                { name: 'Китай', flag: 'cn', link: '/china' },
+                                { name: 'Турция', flag: 'tr', link: '/turkey' },
+                                { name: 'Египет', flag: 'eg', link: '/egypt' },
+                                { name: 'Испания', flag: 'es', link: '/spain' },
+                                { name: 'Италия', flag: 'it', link: '/italy' }
+                            ],
+                            
+                            get filteredItems() {
+                                if (!this.search.trim()) {
+                                    return this.items.slice(0, 5);
+                                }
+                                
+                                const searchLower = this.search.toLowerCase().trim();
+                                return this.items.filter(item => 
+                                    item.name.toLowerCase().includes(searchLower)
+                                );
+                            }
+                        }">
                             <h4 class="base-text">Популярные страны:</h4>
+                            <div class="search-wrap">
+                                <input x-model="search" placeholder="Введите название страны" class="search-input base-text">
+                                <label for="">
+                                    <i data-lucide="search"></i>
+                                </label>
+                            </div>
                             <div class="popular-wrap">
-                                <a href="" class="country-item base-text">
-                                    <span class="fi fi-th"></span>
-                                    Таиланд
-                                </a>
-                                <a href="" class="country-item base-text">
-                                    <span class="fi fi-ae"></span>
-                                    Объединённые Арабские Эмираты
-                                </a>
-                                <a href="" class="country-item base-text">
-                                    <span class="fi fi-id"></span>
-                                    Индонезия
-                                </a>
-                                <a href="" class="country-item base-text">
-                                    <span class="fi fi-vn"></span>
-                                    Вьетнам
-                                </a>
-                                <a href="" class="country-item base-text">
-                                    <span class="fi fi-cn"></span>
-                                    Китай
-                                </a>
+                                <template x-for="item in filteredItems" :key="item.name">
+                                    <a :href="item.link" class="country-item base-text">
+                                        <span :class="`fi fi-${item.flag}`"></span>
+                                        <p x-text="item.name"></p>
+                                    </a>
+                                </template>
+        
+                                <div x-show="search.trim() && filteredItems.length === 0">
+                                    Не найдено
+                                </div>
                             </div>
                         </div>
-                        <div class="world__body-popular" x-data="{ open: false }" :class="{ 'opened': open }" >
+                        <div class="world__body-popular" x-data="{ open: false }" :class="{ 'opened': open }">
                             <h4 class="base-text open-country" @click="open = !open">
                                 Полный список стран:
-                                <i data-lucide="chevron-down"></i>
+                                <i data-lucide="chevron-down" :class="{'rotate-180' : open}"></i>
                             </h4>
                             <div class="popular-wrap" x-show="open" x-collapse>
                                 <a href="" class="country-item base-text">
@@ -800,7 +884,7 @@
                 </div>
             </div>
         </section>
-        <section class="request">
+        <section id="request" class="request">
             <div class="container">
                 <div class="request__body">
                     <h2 class="soft-title">
@@ -827,7 +911,7 @@
                                 <label for="">
                                     <i data-lucide="phone"></i>
                                 </label>
-                                <input class="base-text" placeholder="Введите номер телефона" type="tel" id="phone">
+                                <input data-country="ru" class="base-text" placeholder="Введите номер телефона" type="tel" id="phone">
                             </div>
                             <div class="input-wrap" x-data="{ open: false }" @click.outside="open = false" @click.stop="open = !open">
                                 <label for="">
@@ -842,7 +926,7 @@
                                     <span>Перевести деньги через Western Union</span>
                                 </div>
                             </div>
-                            <button class="button button-black">
+                            <button class="button button-white">
                                 Отправить заявку
                             </button>
                         </form>
